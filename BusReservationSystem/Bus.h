@@ -1,12 +1,13 @@
-#pragma once
+#ifndef BUS_H
+#define BUS_H
 
-#include "Trip.h"
+#include "trip.h"
 
 #include <iostream>
 #include<list>
 
 using namespace std;
-
+class Trip;
 
 class Bus
 {
@@ -25,3 +26,5 @@ public:
 
 };
 
+
+#endif // !BUS_H

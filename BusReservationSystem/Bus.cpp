@@ -1,10 +1,8 @@
-#include "Bus.h"
+#include "bus.h"
 
 
 
-Bus::Bus()
-{
-}
+
 
 
 Bus::Bus(int cap)

@@ -1,4 +1,4 @@
-#include "Time.h"
+#include "time.h"
 
 
 /*	TO DELETE	*/
@@ -20,8 +20,9 @@ Time::Time(int mo, int da, int ho, int mi)
 Time::~Time()
 {
 }
-
+/*
 ostream & operator<<(ostream &o, Time const &t)
 {
 	return o;
 }
+*/

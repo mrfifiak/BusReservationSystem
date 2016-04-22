@@ -1,8 +1,9 @@
-#pragma once
+#ifndef TRIP_H
+#define TRIP_H
 
-#include "Bus.h"
-#include "Client.h"
-#include "Time.h"
+#include "bus.h"
+#include "client.h"
+#include "time.h"
 
 #include <iostream>
 #include <list>
@@ -10,6 +11,8 @@
 
 
 using namespace std;
+class Client;
+class Bus;
 
 class Trip
 {
@@ -29,3 +32,5 @@ public:
 	~Trip();
 };
 
+
+#endif // !TRIP_H

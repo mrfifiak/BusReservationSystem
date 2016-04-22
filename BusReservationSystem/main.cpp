@@ -1,7 +1,7 @@
-#include "BusReservationSystem.h"
-#include "Bus.h"
-#include "Client.h"
-#include "Trip.h"
+#include "busreservationsystem.h"
+#include "bus.h"
+#include "client.h"
+#include "trip.h"
 
 using namespace std;
 

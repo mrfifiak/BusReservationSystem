@@ -1,8 +1,9 @@
-#pragma once
+#ifndef BUSRS_H
+#define BUSRS_H
 
-#include "Bus.h"
-#include "Client.h"
-#include "Trip.h"
+#include "bus.h"
+#include "client.h"
+#include "trip.h"
 
 #include <iostream>
 #include <list>
@@ -22,7 +23,7 @@ private:
 public:
 	BusReservationSystem();
 	~BusReservationSystem();
-	
+
 	void new_client();	// adds a new client
 	void remove_client();	// removes a client
 	void new_bus();	// creates a bus
@@ -39,3 +40,5 @@ public:
 	void print_timetable();	// prints all trips' basic data
 };
 
+
+#endif // !BUSRS_H

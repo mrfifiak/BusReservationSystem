@@ -1,13 +1,14 @@
-#pragma once
+#ifndef CLIENT_H
+#define CLIENT_H
 
-#include "Trip.h"
+#include "trip.h"
 
 #include <iostream>
 #include <list>
 #include <string>
 
 using namespace std;
-
+class Trip;
 
 class Client
 {
@@ -23,3 +24,5 @@ public:
 	~Client();
 };
 
+
+#endif // !CLIENT_H
