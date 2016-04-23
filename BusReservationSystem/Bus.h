@@ -4,10 +4,12 @@
 #include "trip.h"
 
 #include <iostream>
-#include<list>
+#include <list>
 
 using namespace std;
 class Trip;
+enum return_state;
+
 
 class Bus
 {
@@ -23,6 +25,10 @@ public:
 	~Bus();	//destructor
 
 	bool isfull();	// returns true if passengers == capacity
+	return_state assign_trip(int id);	// assigns trip with given id
+	return_state dismiss_trip();	// dismisses the assigned trip
+
+	friend ostream & operator<<(ostream &o, Bus const &t);	// operator <<
 
 };
 

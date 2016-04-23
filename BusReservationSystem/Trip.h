@@ -14,6 +14,8 @@ using namespace std;
 class Client;
 class Bus;
 
+enum return_state { SUCCESS, FAIL_NOT_FOUND, FAIL_FULL, FAIL_NOT_BOOKED };	// says whether the method succeeded
+
 class Trip
 {
 
@@ -28,8 +30,16 @@ private:
 	list<Client*> enrolled_clients;	// list of pointers to enrolled clients
 
 public:
-	Trip(string f, string t, int di, int depmo, int depda, int depho, int depmi, int durho, int durmi);
-	~Trip();
+	Trip(string f, string t, int di, int depmo, int depda, int depho, int depmi, int durho, int durmi);	// constructor with all attributes
+	~Trip();	// destructor
+
+	return_state assign_bus(int id);	// assign bus with given id
+	return_state dismiss_bus();	// dismiss the assigned bus
+	return_state change_departure_time(int mo, int da, int ho, int mi);	// changes all the attributes of the departure time
+	return_state change_departure_time(int ho, int mi);	// changes the time (hh:mm) of the departure
+	return_state change_departure_date(int mo, int da);	// changes the date of the departure
+
+	friend ostream & operator<<(ostream &o, Trip const &t);	// operator <<
 };
 
 

@@ -9,6 +9,9 @@
 
 using namespace std;
 class Trip;
+enum return_state;
+
+
 
 class Client
 {
@@ -20,8 +23,16 @@ private:
 
 
 public:
-	Client(string n);
-	~Client();
+	Client(string n);	// constructor with name
+	~Client();	// destructor
+
+	return_state change_data(string newname);	// changes the name of the client
+	return_state book_trip(int id);	// books trip with given id
+	return_state cancel_trip(int id);	// cancels trip with given id
+
+	friend ostream & operator<<(ostream & o, Trip const & t);	// operator <<
+
+
 };
 
 

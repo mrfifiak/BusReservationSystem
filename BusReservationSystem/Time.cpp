@@ -20,9 +20,9 @@ Time::Time(int mo, int da, int ho, int mi)
 Time::~Time()
 {
 }
-/*
+
+// operator <<
 ostream & operator<<(ostream &o, Time const &t)
 {
 	return o;
 }
-*/

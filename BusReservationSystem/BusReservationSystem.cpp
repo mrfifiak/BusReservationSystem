@@ -81,3 +81,8 @@ void BusReservationSystem::print_trips()
 void BusReservationSystem::print_timetable()
 {
 }
+
+// checks if all the trips have their buses
+void BusReservationSystem::check_trips()
+{
+}

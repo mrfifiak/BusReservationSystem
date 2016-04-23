@@ -19,7 +19,7 @@ public:
 	Time(int mo, int da, int ho, int mi);	// constructor with months=mo, days=da, hours=ho, minutes=mi
 	~Time();	// destructor
 
-	//friend ostream& operator<< (ostream&, Time const&);
+	friend ostream& operator<< (ostream&, Time const&);	// operator <<
 };
 
 #endif	// !TIME_H
