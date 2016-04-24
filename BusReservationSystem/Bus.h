@@ -18,7 +18,7 @@ class Bus
 private:
 	int id;	// bus' identification number
 	int capacity;	// how many passengers can sit
-	int passengers;	// number of clients who enrolled into the bus' trip
+	// int passengers;	// number of clients who enrolled into the bus' trip - UNNECESSARY
 	Trip* assigned_trip;	// the trip which the bus is assigned to
 
 	static int id_counter;	// static variable used to assign new ids
@@ -27,11 +27,11 @@ public:
 	Bus(int cap);	// constructor which sets bus' capacity
 	~Bus();	//destructor
 
-	bool isfull();	// returns true if passengers == capacity
+	int getCapacity();	// returns capacity
 	return_state assign_trip(int id);	// assigns trip with given id
 	return_state dismiss_trip();	// dismisses the assigned trip
 
-	friend ostream & operator<<(ostream &o, Bus const &t);	// operator <<
+	friend ostream & operator<<(ostream &o, Bus const &b);	// operator <<
 
 };
 

@@ -1,23 +1,32 @@
 #include "bus.h"
 
 
+
 int Bus::id_counter = 0;	// initializing id counter
 
 
 // constructor which sets bus' capacity
 Bus::Bus(int cap)
 {
+	capacity = cap;
+	id = id_counter++;
+#ifdef _DEBUG
+		cout << "Created Bus with capacity " << capacity << endl;
+#endif
 }
 
 //destructor
 Bus::~Bus()
 {
+#ifdef _DEBUG
+	cout << "Destroyed Bus with id " << id << endl;
+#endif
 }
 
-// returns true if passengers == capacity
-bool Bus::isfull()
+// returns capacity
+int Bus::getCapacity()
 {
-	return false;
+	return capacity;
 }
 
 // assigns trip with given id
@@ -33,7 +42,8 @@ return_state Bus::dismiss_trip()
 }
 
 // operator <<
-ostream & operator<<(ostream & o, Bus const & t)
+ostream & operator<<(ostream & o, Bus const & b)
 {
+	o << "Bus ID " << b.id << " capacity " << b.capacity << endl;
 	return o;
 }

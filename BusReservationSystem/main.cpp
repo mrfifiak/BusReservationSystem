@@ -8,6 +8,9 @@ using namespace std;
 int main()
 {
 
+	BusReservationSystem b1;
+
+
 /*
 #ifdef _WIN32
 	system("Pause");
