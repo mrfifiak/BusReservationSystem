@@ -3,27 +3,26 @@
 
 #include "bus.h"
 #include "client.h"
+#include "mylib.h"
 #include "trip.h"
 
 #include <iostream>
+#include <limits>	// for safe data input
 #include <list>
 
 using namespace std;
 
 class BusReservationSystem
 {
-
-private:
+public:
 	list<Bus> buses;	// list of all buses
 	list<Trip> trips;	// list of all trips
 	list<Client> clients;	// list of all clients
 
-
-
-public:
 	BusReservationSystem();
 	~BusReservationSystem();
 
+	void menu();	// main menu
 	void new_client();	// adds a new client
 	void remove_client();	// removes a client
 	void new_bus();	// creates a bus

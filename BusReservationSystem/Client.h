@@ -1,6 +1,7 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 
+#include "mylib.h"
 #include "trip.h"
 
 #include <iostream>

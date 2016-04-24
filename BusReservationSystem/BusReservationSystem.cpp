@@ -12,6 +12,10 @@ BusReservationSystem::~BusReservationSystem()
 }
 
 
+void BusReservationSystem::menu()
+{
+}
+
 // adds a new client
 void BusReservationSystem::new_client()
 {
@@ -25,11 +29,51 @@ void BusReservationSystem::remove_client()
 // creates a bus
 void BusReservationSystem::new_bus()
 {
+	int cap;
+	cout << endl << "What's the capacity of new bus? ";
+	cin >> cap;
+	while (cin.fail() || cap <= 0)
+	{
+		cout << "Please enter valid positive capacity: ";
+		cin.sync();
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin >> cap;
+	}
+	Bus* newbus = new Bus(cap);
+	buses.push_back(*newbus);
 }
 
 // removes a bus
 void BusReservationSystem::remove_bus()
 {
+	int id;
+	return_state rs;
+	list<Bus>::iterator rembus;
+
+	cout << endl << "What's the id of the bus you want to delete? ";
+	cin >> id;
+	while (cin.fail() || id < 0)
+	{
+		cout << "Please enter valid id: ";
+		cin.sync();
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin >> id;
+	}
+
+	rembus = findID(buses, id);
+	if (rembus != buses.end())
+	{
+		rs = SUCCESS;
+		buses.erase(rembus);
+	}
+	else rs = FAIL_NOT_FOUND;
+
+	rstate("Bus", rs);
+
+
+
 }
 
 // creates a new trip

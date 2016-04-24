@@ -11,7 +11,7 @@ Bus::Bus(int cap)
 	capacity = cap;
 	id = id_counter++;
 #ifdef _DEBUG
-		cout << "Created Bus with capacity " << capacity << endl;
+		cout << "Created Bus with capacity " << capacity << " (ID: " << id << ")" << endl;
 #endif
 }
 
@@ -21,6 +21,12 @@ Bus::~Bus()
 #ifdef _DEBUG
 	cout << "Destroyed Bus with id " << id << endl;
 #endif
+}
+
+// returns ID
+int Bus::getID()
+{
+	return id;
 }
 
 // returns capacity

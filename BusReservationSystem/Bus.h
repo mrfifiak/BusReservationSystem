@@ -1,8 +1,9 @@
 #ifndef BUS_H
 #define BUS_H
 
-
+#include "mylib.h"
 #include "trip.h"
+
 
 #include <iostream>
 #include <list>
@@ -27,6 +28,7 @@ public:
 	Bus(int cap);	// constructor which sets bus' capacity
 	~Bus();	//destructor
 
+	int getID();	// returns ID
 	int getCapacity();	// returns capacity
 	return_state assign_trip(int id);	// assigns trip with given id
 	return_state dismiss_trip();	// dismisses the assigned trip

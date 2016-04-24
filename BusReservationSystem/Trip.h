@@ -3,6 +3,7 @@
 
 #include "bus.h"
 #include "client.h"
+#include "mylib.h"
 #include "time.h"
 
 #include <iostream>
@@ -15,7 +16,7 @@ class Client;
 class Bus;
 
 
-enum return_state { SUCCESS, FAIL_NOT_FOUND, FAIL_FULL, FAIL_NOT_BOOKED };	// says whether the method succeeded
+//enum return_state { SUCCESS, FAIL_NOT_FOUND, FAIL_FULL, FAIL_NOT_BOOKED };	// says whether the method succeeded
 
 
 

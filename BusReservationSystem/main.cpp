@@ -9,6 +9,11 @@ int main()
 {
 
 	BusReservationSystem b1;
+	b1.new_bus();
+	cout << "DEBUG1" << endl;
+	b1.remove_bus();
+	cout << "DEBUG2" << endl;
+	
 
 
 /*
