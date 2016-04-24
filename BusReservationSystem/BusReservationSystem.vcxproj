@@ -149,6 +149,7 @@
     <ClInclude Include="bus.h" />
     <ClInclude Include="busreservationsystem.h" />
     <ClInclude Include="client.h" />
+    <ClInclude Include="mylib.h" />
     <ClInclude Include="time.h" />
     <ClInclude Include="trip.h" />
   </ItemGroup>

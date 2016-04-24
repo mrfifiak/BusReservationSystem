@@ -1,6 +1,7 @@
 #ifndef BUS_H
 #define BUS_H
 
+
 #include "trip.h"
 
 #include <iostream>
@@ -15,10 +16,12 @@ class Bus
 {
 
 private:
-	int bus_id;	// bus' identification number
+	int id;	// bus' identification number
 	int capacity;	// how many passengers can sit
 	int passengers;	// number of clients who enrolled into the bus' trip
 	Trip* assigned_trip;	// the trip which the bus is assigned to
+
+	static int id_counter;	// static variable used to assign new ids
 
 public:
 	Bus(int cap);	// constructor which sets bus' capacity

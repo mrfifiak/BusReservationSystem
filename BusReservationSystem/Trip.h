@@ -14,13 +14,16 @@ using namespace std;
 class Client;
 class Bus;
 
+
 enum return_state { SUCCESS, FAIL_NOT_FOUND, FAIL_FULL, FAIL_NOT_BOOKED };	// says whether the method succeeded
+
+
 
 class Trip
 {
 
 private:
-	int trip_id;	// trip's identification number
+	int id;	// trip's identification number
 	string from;	// start place
 	string to;	// arrival place
 	unsigned int distance;	// distance in km
@@ -28,6 +31,8 @@ private:
 	Time duration;	// duration in hh:mm
 	Bus* assigned_bus;	// pointer to the bus assigned to the trip
 	list<Client*> enrolled_clients;	// list of pointers to enrolled clients
+
+	static int id_counter;	// static variable used to assign new ids
 
 public:
 	Trip(string f, string t, int di, int depmo, int depda, int depho, int depmi, int durho, int durmi);	// constructor with all attributes

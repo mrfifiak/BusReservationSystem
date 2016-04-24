@@ -1,7 +1,7 @@
 #include "trip.h"
 
 
-
+int Trip::id_counter = 0;	// initializing id counter
 
 // constructor with all attributes
 Trip::Trip(string f, string t, int di, int depmo, int depda, int depho, int depmi, int durho, int durmi)

@@ -1,18 +1,20 @@
 #include "bus.h"
 
 
+int Bus::id_counter = 0;	// initializing id counter
 
 
-
-
+// constructor which sets bus' capacity
 Bus::Bus(int cap)
 {
 }
 
+//destructor
 Bus::~Bus()
 {
 }
 
+// returns true if passengers == capacity
 bool Bus::isfull()
 {
 	return false;

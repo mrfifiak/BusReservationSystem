@@ -17,10 +17,11 @@ class Client
 {
 
 private:
-	int client_id;	// client's identification number
+	int id;	// client's identification number
 	string name;	// name and surname
 	list<Trip*> booked_trips;	// list of pointers to trips which the client booked
 
+	static int id_counter;	// static variable used to assign new ids
 
 public:
 	Client(string n);	// constructor with name
