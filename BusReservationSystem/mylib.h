@@ -9,7 +9,8 @@ using namespace std;
 
 enum return_state { SUCCESS, FAIL_NOT_FOUND, FAIL_FULL, FAIL_NOT_BOOKED };	// says whether the method succeeded
 
-																			// prints the effect depending on return_state value
+																			
+// prints the effect depending on return_state value
 inline void rstate(string s, return_state rs)	
 {
 	switch (rs)
@@ -33,6 +34,7 @@ inline void rstate(string s, return_state rs)
 
 	}
 }
+
 
 // returns pointer to an object from source list with given id
 template<typename T>

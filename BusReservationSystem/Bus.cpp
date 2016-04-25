@@ -10,6 +10,7 @@ Bus::Bus(int cap)
 {
 	capacity = cap;
 	id = id_counter++;
+	assigned_trip = NULL;
 #ifdef _DEBUG
 		cout << "Created Bus with capacity " << capacity << " (ID: " << id << ")" << endl;
 #endif
@@ -50,6 +51,6 @@ return_state Bus::dismiss_trip()
 // operator <<
 ostream & operator<<(ostream & o, Bus const & b)
 {
-	o << "Bus ID " << b.id << " capacity " << b.capacity << endl;
+	o << "Bus ID: " << b.id << " capacity " << b.capacity;
 	return o;
 }

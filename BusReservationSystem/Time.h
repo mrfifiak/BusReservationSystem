@@ -1,6 +1,8 @@
 #ifndef TIME_H
 #define TIME_H
 
+#include <iomanip>
+#include <string>
 #include <iostream>
 
 using namespace std;

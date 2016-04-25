@@ -6,11 +6,24 @@ int Trip::id_counter = 0;	// initializing id counter
 // constructor with all attributes
 Trip::Trip(string f, string t, unsigned int di, int depmo, int depda, int depho, int depmi, int durho, int durmi)
 {
+	from = f;
+	to = t;
+	distance = di;
+	departure = Time(depmo, depda, depho, depmi);
+	duration = Time(durho, durmi);
+	assigned_bus = NULL;
+	id = id_counter++;
+#ifdef _DEBUG
+	cout << "Constructor Trip " << id << ' ' << f << " -> " << t << ' ' << distance << "km " << departure << ' ' << duration << endl;
+#endif
 }
 
 // destructor
 Trip::~Trip()
 {
+#ifdef _DEBUG
+	cout << "Destructor Trip " << id << endl;
+#endif
 }
 
 

@@ -19,8 +19,8 @@ public:
 	list<Trip> trips;	// list of all trips
 	list<Client> clients;	// list of all clients
 
-	BusReservationSystem();
-	~BusReservationSystem();
+	BusReservationSystem();	// default constructor
+	~BusReservationSystem();	// destructor
 
 	void menu();	// main menu
 	void new_client();	// adds a new client

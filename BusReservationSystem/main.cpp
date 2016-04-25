@@ -1,3 +1,5 @@
+
+
 #include "busreservationsystem.h"
 #include "bus.h"
 #include "client.h"
@@ -9,18 +11,25 @@ int main()
 {
 
 	BusReservationSystem b1;
+#ifdef _BUSTEST
 	b1.new_bus();
 	cout << "DEBUG1" << endl;
+	b1.new_bus();
+	b1.new_bus();
 	b1.remove_bus();
 	cout << "DEBUG2" << endl;
-	
-
-
-/*
-#ifdef _WIN32
-	system("Pause");
 #endif
-*/
+#ifdef _CLIENTTEST
+	b1.new_client();
+	b1.new_client();
+	b1.new_client();
+	b1.change_client_data();
+	b1.remove_client();
+#endif
+
+	Trip t = Trip("Warsaw", "Cracow", 400, 12, 04, 12, 00, 4, 0);
+
+
 
 	return 0;
 
