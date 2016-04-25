@@ -50,6 +50,5 @@ return_state Client::cancel_trip(int id)
 ostream & operator<<(ostream & o, Client const & c)
 {
 	o << "Client ID: " << c.id << " Name: " << c.name;
-	//o << c.name;
 	return o;
 }
