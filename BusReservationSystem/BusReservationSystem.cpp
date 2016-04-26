@@ -168,8 +168,8 @@ void BusReservationSystem::assign_bus_to_trip()
 {
 }
 
-// choose a bus, then choose the trip
-void BusReservationSystem::dismiss_bus_from_trip()
+// choose the bus
+void BusReservationSystem::dismiss_a_bus()
 {
 }
 
@@ -178,8 +178,8 @@ void BusReservationSystem::assign_trip_to_bus()
 {
 }
 
-// choose a trip, then choose the bus
-void BusReservationSystem::dismiss_trip_from_bus()
+// choose the trip
+void BusReservationSystem::dismiss_a_trip()
 {
 }
 

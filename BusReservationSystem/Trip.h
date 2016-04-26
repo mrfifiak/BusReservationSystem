@@ -17,8 +17,6 @@ class Client;
 class Bus;
 
 
-//enum return_state { SUCCESS, FAIL_NOT_FOUND, FAIL_FULL, FAIL_NOT_BOOKED };	// says whether the method succeeded
-
 
 
 class Trip

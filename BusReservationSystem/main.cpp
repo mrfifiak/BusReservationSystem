@@ -1,5 +1,5 @@
-#define _BUSTEST
-#define _CLIENTTEST
+//#define _BUSTEST
+//#define _CLIENTTEST
 
 #include "busreservationsystem.h"
 #include "bus.h"

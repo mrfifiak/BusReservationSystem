@@ -31,9 +31,9 @@ public:
 	void remove_trip();	// removes a trip
 	void change_client_data();	// changes client's data
 	void assign_bus_to_trip();	// choose a bus, then choose the trip
-	void dismiss_bus_from_trip();	// choose a bus, then choose the trip
+	void dismiss_a_bus();	// choose the bus
 	void assign_trip_to_bus();	// choose a trip, then choose the bus
-	void dismiss_trip_from_bus();	// choose a trip, then choose the bus
+	void dismiss_a_trip();	// choose the trip
 	void change_trip_data();	// changes trip's data
 	void print_trips();	// prints all trips with buses and clients
 	void print_timetable();	// prints all trips' basic data
