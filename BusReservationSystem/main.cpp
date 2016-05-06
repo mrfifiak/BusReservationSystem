@@ -20,6 +20,7 @@ int main()
 	b1.remove_bus();
 	cout << "DEBUG2" << endl;
 #endif
+
 #ifdef _CLIENTTEST
 	b1.new_client();
 	b1.new_client();
