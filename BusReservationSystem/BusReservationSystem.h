@@ -23,7 +23,7 @@ public:
 	~BusReservationSystem();	// destructor
 
 	void menu();	// main menu
-	void new_client();	// adds a new client
+	void new_client(string name);	// adds a new client
 	void remove_client();	// removes a client
 	void new_bus();	// creates a bus
 	void remove_bus();	// removes a bus

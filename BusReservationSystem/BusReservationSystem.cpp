@@ -19,17 +19,8 @@ void BusReservationSystem::menu()
 }
 
 // adds a new client
-void BusReservationSystem::new_client()
+void BusReservationSystem::new_client(string name)
 {
-	string name, n;
-	cout << endl << "What's new client's name? ";
-	cin >> n;
-	name = n;
-	while (cin.peek() == ' ')
-	{
-		cin >> n;
-		name = name + ' ' + n;
-	}
 	Client* newclient = new Client(name);
 	clients.push_back(*newclient);
 }

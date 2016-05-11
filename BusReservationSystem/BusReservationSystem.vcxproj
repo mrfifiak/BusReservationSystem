@@ -153,7 +153,9 @@
     <ClInclude Include="bus.h" />
     <ClInclude Include="busreservationsystem.h" />
     <ClInclude Include="client.h" />
+    <ClInclude Include="interface.h" />
     <ClInclude Include="mylib.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="time.h" />
     <ClInclude Include="trip.h" />
   </ItemGroup>
@@ -161,12 +163,16 @@
     <ClCompile Include="bus.cpp" />
     <ClCompile Include="busreservationsystem.cpp" />
     <ClCompile Include="client.cpp" />
+    <ClCompile Include="interface.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="time.cpp" />
     <ClCompile Include="trip.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Preliminary.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BusReservationSystem.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

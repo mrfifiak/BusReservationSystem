@@ -1,9 +1,10 @@
 //#define _BUSTEST
-//#define _CLIENTTEST
+#define _CLIENTTEST
 
 #include "busreservationsystem.h"
 #include "bus.h"
 #include "client.h"
+#include "interface.h"
 #include "trip.h"
 
 using namespace std;
@@ -22,9 +23,7 @@ int main()
 #endif
 
 #ifdef _CLIENTTEST
-	b1.new_client();
-	b1.new_client();
-	b1.new_client();
+	new_client(b1);
 	b1.change_client_data();
 	b1.remove_client();
 #endif
