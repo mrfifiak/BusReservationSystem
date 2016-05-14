@@ -90,8 +90,11 @@ void remove_bus(BusReservationSystem & brs)
 void new_trip(BusReservationSystem & brs)
 {
 	string from, f, to, t;
+	int di, depmo, depda, depho, depmi, durho, durmi;
 
-	cout << endl << "Where does the bus start from? ";
+
+#pragma region places
+	cout << endl << "Where does the trip start? ";
 	cin >> f;
 	from = f;
 	while (cin.peek() == ' ')
@@ -100,7 +103,7 @@ void new_trip(BusReservationSystem & brs)
 		from = from+ ' ' + f;
 	}
 
-	cout << endl << "Where does the bus go to? ";
+	cout << endl << "Where does the trip end? ";
 	cin >> t;
 	to = t;
 	while (cin.peek() == ' ')
@@ -112,8 +115,102 @@ void new_trip(BusReservationSystem & brs)
 #ifdef _DEBUG
 	cout << "From: " << from << " to " << to << endl;
 #endif
+#pragma endregion
 
+	cout << endl << "What's the distance of the trip? ";
+	cin >> di;
+	while (cin.fail() || di <= 0)
+	{
+		cout << "Please enter valid positive distance: ";
+		cin.sync();
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin >> di;
+	}
 
+#pragma region departure
+	cout << endl << "Enter departure data using numbers:" << endl;
+	cout << "Month(1-12): ";
+	cin >> depmo;
+	while (cin.fail() || depmo <= 0 || depmo > 12)
+	{
+		cout << "Please enter valid month (1-12): ";
+		cin.sync();
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin >> depmo;
+	}
 
-	//brs.new_trip(...);
+	cout << "Day(1-31): ";
+	cin >> depda;
+	while (cin.fail() || depda <= 0 || depda > 31)
+	{
+		cout << "Please enter valid day (1-31): ";
+		cin.sync();
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin >> depda;
+	}
+
+	cout << "Hour (1-24): ";
+	cin >> depho;
+	while (cin.fail() || depho <= 0 || depho > 24)
+	{
+		cout << "Please enter valid hour (1-24): ";
+		cin.sync();
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin >> depho;
+	}
+
+	cout << "Minutes(0-59): ";
+	cin >> depmi;
+	while (cin.fail() || depmi <= 0 || depmi > 59)
+	{
+		cout << "Please enter valid month (0-59): ";
+		cin.sync();
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin >> depmi;
+	}
+
+	Time dep = Time(depmo, depda, depho, depmi);
+
+#ifdef _DEBUG
+	cout << "Departure: " << dep << endl;
+#endif  
+#pragma endregion
+
+#pragma region duration
+	cout << endl << "Enter duration data of the trip:" << endl;
+	cout << "Hours (1-24): ";
+	cin >> durho;
+	while (cin.fail() || durho <= 0 || durho > 24)
+	{
+		cout << "Please enter valid hour (1-24): ";
+		cin.sync();
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin >> durho;
+	}
+
+	cout << "Minutes(0-59): ";
+	cin >> durmi;
+	while (cin.fail() || durmi <= 0 || durmi > 59)
+	{
+		cout << "Please enter valid month (0-59): ";
+		cin.sync();
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin >> durmi;
+	}
+
+	Time dur = Time(durho, durmi);
+
+#ifdef _DEBUG
+	cout << "Duration: " << dur << endl;
+#endif   
+#pragma endregion
+
+	//brs.new_trip(from, to, di, dep, dur);
 }

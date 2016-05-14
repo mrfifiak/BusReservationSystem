@@ -36,6 +36,7 @@ private:
 
 public:
 	Trip(string f, string t, unsigned int di, int depmo, int depda, int depho, int depmi, int durho, int durmi);	// constructor with all attributes
+	Trip(string f, string t, unsigned int di, Time dep, Time dur);
 	~Trip();	// destructor
 
 	bool isfull();	// returns true if the number of enrolled passengers passengers == bus capacity

@@ -18,6 +18,20 @@ Trip::Trip(string f, string t, unsigned int di, int depmo, int depda, int depho,
 #endif
 }
 
+Trip::Trip(string f, string t, unsigned int di, Time dep, Time dur)
+{
+	from = f;
+	to = t;
+	distance = di;
+	departure = dep;
+	duration = dur;
+	assigned_bus = NULL;
+	id = id_counter++;
+#ifdef _DEBUG
+	cout << "Constructor Trip " << id << ' ' << f << " -> " << t << ' ' << distance << "km " << departure << ' ' << duration << endl;
+#endif
+}
+
 // destructor
 Trip::~Trip()
 {
