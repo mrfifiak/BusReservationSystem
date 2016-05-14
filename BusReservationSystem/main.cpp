@@ -24,8 +24,8 @@ int main()
 
 #ifdef _CLIENTTEST
 	new_client(b1);
-	b1.change_client_data();
-	b1.remove_client();
+	change_client_data(b1);
+	remove_client(b1);
 #endif
 
 	Trip t = Trip("Warsaw", "Cracow", 400, 12, 04, 12, 00, 4, 0);
