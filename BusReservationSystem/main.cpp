@@ -1,5 +1,5 @@
-//#define _BUSTEST
-#define _CLIENTTEST
+#define _BUSTEST
+//#define _CLIENTTEST
 
 #include "busreservationsystem.h"
 #include "bus.h"
@@ -14,11 +14,8 @@ int main()
 
 	BusReservationSystem b1;
 #ifdef _BUSTEST
-	b1.new_bus();
-	cout << "DEBUG1" << endl;
-	b1.new_bus();
-	b1.new_bus();
-	b1.remove_bus();
+	new_bus(b1);
+	remove_bus(b1);
 	cout << "DEBUG2" << endl;
 #endif
 

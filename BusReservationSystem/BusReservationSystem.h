@@ -25,11 +25,14 @@ public:
 	void menu();	// main menu
 	void new_client(string name);	// adds a new client
 	void remove_client(int id);	// removes a client
-	void new_bus();	// creates a bus
-	void remove_bus();	// removes a bus
+	void change_client_data(int id);	// changes client's data
+
+	void new_bus(int cap);	// creates a bus
+	void remove_bus(int id);	// removes a bus
+
 	void new_trip();	// creates a new trip
 	void remove_trip();	// removes a trip
-	void change_client_data(int id);	// changes client's data
+	
 	void assign_bus_to_trip();	// choose a bus, then choose the trip
 	void dismiss_a_bus();	// choose the bus
 	void assign_trip_to_bus();	// choose a trip, then choose the bus

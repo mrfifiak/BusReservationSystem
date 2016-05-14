@@ -10,5 +10,9 @@ void new_client(BusReservationSystem& brs);
 void remove_client(BusReservationSystem& brs);
 void change_client_data(BusReservationSystem& brs);
 
+void new_bus(BusReservationSystem& brs);
+void remove_bus(BusReservationSystem& brs);
+
+void new_trip(BusReservationSystem& brs);
 
 #endif
