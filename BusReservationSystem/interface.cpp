@@ -1,5 +1,9 @@
 #include "interface.h"
 
+void menu()
+{
+}
+
 void new_client(BusReservationSystem& brs)
 {
 	string name, n;

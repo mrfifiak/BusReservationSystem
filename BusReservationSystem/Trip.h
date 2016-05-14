@@ -40,6 +40,8 @@ public:
 	~Trip();	// destructor
 
 	bool isfull();	// returns true if the number of enrolled passengers passengers == bus capacity
+	bool hasbus();	// returns true if the trip has a bus assigned
+	int getID();	// generic getter
 	return_state assign_bus(int id);	// assign bus with given id
 	return_state dismiss_bus();	// dismiss the assigned bus
 	return_state change_departure_time(int mo, int da, int ho, int mi);	// changes all the attributes of the departure time

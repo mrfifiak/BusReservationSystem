@@ -47,6 +47,20 @@ bool Trip::isfull()
 	return false;
 }
 
+bool Trip::hasbus()
+{
+	if (assigned_bus != NULL)
+	{
+		return true;
+	}
+	return false;
+}
+
+int Trip::getID()
+{
+	return id;
+}
+
 // assign bus with given id
 return_state Trip::assign_bus(int id)
 {

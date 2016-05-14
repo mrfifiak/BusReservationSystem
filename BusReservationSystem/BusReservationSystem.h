@@ -22,7 +22,7 @@ public:
 	BusReservationSystem();	// default constructor
 	~BusReservationSystem();	// destructor
 
-	void menu();	// main menu
+
 	void new_client(string name);	// adds a new client
 	void remove_client(int id);	// removes a client
 	void change_client_data(int id);	// changes client's data
@@ -32,6 +32,7 @@ public:
 
 	void new_trip(string from, string to, unsigned int di, Time dep, Time dur);	// creates a new trip
 	void remove_trip(int id);	// removes a trip
+	void check_trips();	// checks if all the trips have their buses
 	
 	void assign_bus_to_trip();	// choose a bus, then choose the trip
 	void dismiss_a_bus();	// choose the bus
@@ -40,7 +41,7 @@ public:
 	void change_trip_data();	// changes trip's data
 	void print_trips();	// prints all trips with buses and clients
 	void print_timetable();	// prints all trips' basic data
-	void check_trips();	// checks if all the trips have their buses
+	
 };
 
 

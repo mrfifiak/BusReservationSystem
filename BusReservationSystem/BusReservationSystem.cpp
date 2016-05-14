@@ -14,10 +14,6 @@ BusReservationSystem::~BusReservationSystem()
 }
 
 
-void BusReservationSystem::menu()
-{
-}
-
 // adds a new client
 void BusReservationSystem::new_client(string name)
 {
@@ -120,6 +116,35 @@ void BusReservationSystem::remove_trip(int id)
 	rstate("Trip", rs);
 }
 
+// checks if all the trips have their buses
+void BusReservationSystem::check_trips()
+{
+	list<int> ids;
+	list<Trip>::iterator ti;
+	list<int>::iterator ii;
+
+	for (ti = trips.begin(); ti != trips.end(); ++ti)
+	{
+		if (ti->hasbus() == false)
+		{
+			ids.push_back(ti->getID());
+		}
+	}
+
+	if (ids.empty())
+	{
+		cout << endl << "All trips have buses assigned!" << endl;
+	}
+	else
+	{
+		cout << endl << "Trips with following id's have no bus assigned: " << endl;
+		for (ii = ids.begin(); ii != ids.end(); ++ii)
+		{
+			cout << *ii << endl;
+		}
+	}
+}
+
 // choose a bus, then choose the trip
 void BusReservationSystem::assign_bus_to_trip()
 {
@@ -155,7 +180,4 @@ void BusReservationSystem::print_timetable()
 {
 }
 
-// checks if all the trips have their buses
-void BusReservationSystem::check_trips()
-{
-}
+
