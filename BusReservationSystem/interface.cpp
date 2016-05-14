@@ -212,5 +212,5 @@ void new_trip(BusReservationSystem & brs)
 #endif   
 #pragma endregion
 
-	//brs.new_trip(from, to, di, dep, dur);
+	brs.new_trip(from, to, di, dep, dur);
 }

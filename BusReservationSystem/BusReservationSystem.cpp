@@ -97,7 +97,7 @@ void BusReservationSystem::remove_bus(int id)
 }
 
 // creates a new trip
-void BusReservationSystem::new_trip()
+void BusReservationSystem::new_trip(string from, string to, unsigned int di, Time dep, Time dur)
 {
 }
 

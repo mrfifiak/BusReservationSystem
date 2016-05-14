@@ -127,8 +127,16 @@ ostream & operator<<(ostream &o, Time const &t)
 {
 	char buffer[12];
 	string out;
-	sprintf_s(buffer, "%02d.%02d %02d:%02d", t.days, t.months, t.hours, t.minutes);
-	out = string(buffer, 12);
+	if (t.months == 0 && t.days == 0)
+	{
+		sprintf_s(buffer, "%02d:%02d", t.hours, t.minutes);
+		out = string(buffer, 6);
+	}
+	else
+	{
+		sprintf_s(buffer, "%02d.%02d %02d:%02d", t.days, t.months, t.hours, t.minutes);
+		out = string(buffer, 12);
+	}
 	o << out;
 	return o;
 }
