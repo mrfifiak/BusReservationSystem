@@ -214,3 +214,21 @@ void new_trip(BusReservationSystem & brs)
 
 	brs.new_trip(from, to, di, dep, dur);
 }
+
+void remove_trip(BusReservationSystem & brs)
+{
+	int id;
+
+	cout << endl << "What's the ID of the trip you want to remove? ";
+	cin >> id;
+	while (cin.fail() || id < 0)
+	{
+		cout << "Please enter valid id: ";
+		cin.sync();
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin >> id;
+	}
+
+	brs.remove_trip(id);
+}

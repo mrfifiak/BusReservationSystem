@@ -31,7 +31,7 @@ public:
 	void remove_bus(int id);	// removes a bus
 
 	void new_trip(string from, string to, unsigned int di, Time dep, Time dur);	// creates a new trip
-	void remove_trip();	// removes a trip
+	void remove_trip(int id);	// removes a trip
 	
 	void assign_bus_to_trip();	// choose a bus, then choose the trip
 	void dismiss_a_bus();	// choose the bus

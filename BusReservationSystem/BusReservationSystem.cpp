@@ -93,7 +93,6 @@ void BusReservationSystem::remove_bus(int id)
 	else rs = FAIL_NOT_FOUND;
 
 	rstate("Bus", rs);
-
 }
 
 // creates a new trip
@@ -104,8 +103,21 @@ void BusReservationSystem::new_trip(string from, string to, unsigned int di, Tim
 }
 
 // removes a trip
-void BusReservationSystem::remove_trip()
+void BusReservationSystem::remove_trip(int id)
 {
+	return_state rs;
+	list<Trip>::iterator remtrip;
+
+
+	remtrip = findID(trips, id);
+	if (remtrip != trips.end())
+	{
+		rs = SUCCESS;
+		trips.erase(remtrip);
+	}
+	else rs = FAIL_NOT_FOUND;
+
+	rstate("Trip", rs);
 }
 
 // choose a bus, then choose the trip

@@ -14,5 +14,6 @@ void new_bus(BusReservationSystem& brs);
 void remove_bus(BusReservationSystem& brs);
 
 void new_trip(BusReservationSystem& brs);
+void remove_trip(BusReservationSystem& brs);
 
 #endif
