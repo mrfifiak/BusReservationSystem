@@ -89,4 +89,31 @@ void remove_bus(BusReservationSystem & brs)
 
 void new_trip(BusReservationSystem & brs)
 {
+	string from, f, to, t;
+
+	cout << endl << "Where does the bus start from? ";
+	cin >> f;
+	from = f;
+	while (cin.peek() == ' ')
+	{
+		cin >> f;
+		from = from+ ' ' + f;
+	}
+
+	cout << endl << "Where does the bus go to? ";
+	cin >> t;
+	to = t;
+	while (cin.peek() == ' ')
+	{
+		cin >> t;
+		to = to + ' ' + t;
+	}
+
+#ifdef _DEBUG
+	cout << "From: " << from << " to " << to << endl;
+#endif
+
+
+
+	//brs.new_trip(...);
 }

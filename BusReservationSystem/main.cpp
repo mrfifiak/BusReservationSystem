@@ -1,5 +1,6 @@
-#define _BUSTEST
+//#define _BUSTEST
 //#define _CLIENTTEST
+#define _TRIPTEST
 
 #include "busreservationsystem.h"
 #include "bus.h"
@@ -25,7 +26,11 @@ int main()
 	remove_client(b1);
 #endif
 
-	Trip t = Trip("Warsaw", "Cracow", 400, 12, 04, 12, 00, 4, 0);
+#ifdef _TRIPTEST
+	new_trip(b1);
+#endif
+
+	//Trip t = Trip("Warsaw", "Cracow", 400, 12, 04, 12, 00, 4, 0);
 
 
 
