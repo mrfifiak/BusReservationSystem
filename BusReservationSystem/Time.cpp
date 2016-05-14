@@ -35,6 +35,93 @@ Time::~Time()
 {
 }
 
+bool Time::operator == (const Time & time)
+{
+	if(months == time.months && days == time.days && hours == time.hours && minutes == time.minutes)
+	{
+		return true;
+	}
+	else 
+	{
+		return false;
+	}
+}
+
+bool Time::operator!=(const Time & time)
+{
+	if (months == time.months && days == time.days && hours == time.hours && minutes == time.minutes)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+Time & Time::operator=(const Time & time)
+{
+	if (this == &time) {
+		return *this;
+	}
+
+	months = time.months;
+	days = time.days;
+	hours = time.hours;
+	minutes = time.minutes;
+
+	return *this;
+}
+
+Time Time::operator+(const Time & time)
+{
+	int mo = 0, da = 0, ho = 0, mi = 0, temp;
+
+	mi = minutes + time.minutes;
+	if (mi >= 60)
+	{
+		temp = mi % 60;
+		ho += temp;
+		mi -= (temp * 60);
+	}
+
+	ho = ho + hours + time.hours;
+	if (ho >= 24)
+	{
+		temp = ho % 24;
+		da += temp;
+		ho -= (temp * 24);
+	}
+
+	da = da + days + time.days;
+	if (da >= 31)
+	{
+		temp = da % 31;
+		mo += temp;
+		da -= (temp * 31);
+	}
+
+	mo = mo + months + time.months;
+	while (mo > 12)
+	{
+		mo -= 12;
+	}
+
+	return Time(mo, da, ho, mi);
+}
+
+
+Time & Time::operator+=(const Time & time)
+{
+	months += time.months;
+	days += time.days;
+	hours += time.hours;
+	minutes += time.minutes;
+
+	return *this;
+}
+
+
 // operator <<
 ostream & operator<<(ostream &o, Time const &t)
 {

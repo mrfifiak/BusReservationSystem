@@ -21,6 +21,13 @@ public:
 	Time(int mo, int da, int ho, int mi);	// constructor with months=mo, days=da, hours=ho, minutes=mi
 	~Time();	// destructor
 
+	/* OPERATORS */
+	bool operator == (const Time &time);
+	bool operator != (const Time &time);
+	Time& operator = (const Time &time);
+	Time operator + (const Time &time);
+	Time& operator += (const Time &time);
+
 	friend ostream& operator<< (ostream&, Time const&);	// operator <<
 };
 
