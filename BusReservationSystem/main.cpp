@@ -37,6 +37,9 @@ int main()
 	new_trip(b1);
 	b1.assign_bus_to_trip(1, 1);
 	cout << b1.trips.front();
+	b1.check_trips();
+	b1.assign_bus_to_trip(0, 0);
+	b1.check_trips();
 #endif
 
 

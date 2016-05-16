@@ -29,15 +29,16 @@ public:
 
 	void new_bus(int cap);	// creates a bus
 	void remove_bus(int id);	// removes a bus
+	void free_bus(int id);	// choose the bus
 
 	void new_trip(string from, string to, unsigned int di, Time dep, Time dur);	// creates a new trip
 	void remove_trip(int id);	// removes a trip
 	void check_trips();	// checks if all the trips have their buses
+	void free_trip(int id);	// choose the trip
 	
-	void assign_bus_to_trip(int bid, int tid);	// choose a bus, then choose the trip
-	void dismiss_a_bus();	// choose the bus
-	void assign_trip_to_bus();	// choose a trip, then choose the bus
-	void dismiss_a_trip();	// choose the trip
+	void assign_bus_to_trip(int bid, int tid);	// assigns bus to a trip and vice versa
+
+
 	void change_trip_data();	// changes trip's data
 	void print_trips();	// prints all trips with buses and clients
 	void print_timetable();	// prints all trips' basic data

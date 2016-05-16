@@ -91,6 +91,26 @@ void BusReservationSystem::remove_bus(int id)
 	rstate("Bus", rs);
 }
 
+// choose the bus
+void BusReservationSystem::free_bus(int id)
+{
+	list<Bus>::iterator fbus = findID(buses, id);
+	return_state rs;
+	if (fbus == buses.end())
+	{
+		rs = FAIL_NOT_FOUND;
+	}
+	else
+	{
+		fbus->dismiss_trip();
+		list<Trip>::iterator ftrip;
+		ftrip->dismiss_bus();
+		rs = SUCCESS;
+	}
+
+	rstate("Bus", rs);
+}
+
 // creates a new trip
 void BusReservationSystem::new_trip(string from, string to, unsigned int di, Time dep, Time dur)
 {
@@ -145,7 +165,27 @@ void BusReservationSystem::check_trips()
 	}
 }
 
-// choose a bus, then choose the trip
+// choose the trip
+void BusReservationSystem::free_trip(int id)
+{
+	list<Trip>::iterator ftrip = findID(trips, id);
+	return_state rs;
+	if (ftrip == trips.end())
+	{
+		rs = FAIL_NOT_FOUND;
+	}
+	else
+	{
+		ftrip->dismiss_bus();
+		list<Bus>::iterator fbus;
+		fbus->dismiss_trip();
+		rs = SUCCESS;
+	}
+
+	rstate("Trip", rs);
+}
+
+// assigns bus to a trip and vice versa
 void BusReservationSystem::assign_bus_to_trip(int bid, int tid)
 {
 	list<Bus>::iterator asbus = findID(buses, bid);
@@ -191,21 +231,6 @@ void BusReservationSystem::assign_bus_to_trip(int bid, int tid)
 	asbus->assign_trip(newtrip);
 	astrip->assign_bus(newbus);
 
-}
-
-// choose the bus
-void BusReservationSystem::dismiss_a_bus()
-{
-}
-
-// choose a trip, then choose the bus
-void BusReservationSystem::assign_trip_to_bus()
-{
-}
-
-// choose the trip
-void BusReservationSystem::dismiss_a_trip()
-{
 }
 
 // changes trip's data
