@@ -39,7 +39,9 @@ public:
 	void assign_bus_to_trip(int bid, int tid);	// assigns bus to a trip and vice versa
 
 
-	void change_trip_data();	// changes trip's data
+	void change_trip_departure_time(int id, int mo, int da, int ho, int mi);	// changes trip's data
+	void change_trip_departure_time(int id, int ho, int mi);	// changes trip's data
+	void change_trip_date(int id, int mo, int da);	// changes trip's data
 	void print_trips();	// prints all trips' data with bus ID and number of clients
 	void print_trip_clients(int id);	// prints trip's basic data with list of clients
 	void print_timetable();	// prints all trips' basic data

@@ -24,6 +24,7 @@ public:
 	/* OPERATORS */
 	bool operator == (const Time &time);
 	bool operator != (const Time &time);
+	bool operator > (const Time &time);
 	Time& operator = (const Time &time);
 	Time operator + (const Time &time);
 	Time& operator += (const Time &time);

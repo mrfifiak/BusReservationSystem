@@ -35,7 +35,7 @@ Time::~Time()
 {
 }
 
-bool Time::operator == (const Time & time)
+bool Time::operator==(const Time & time)
 {
 	if(months == time.months && days == time.days && hours == time.hours && minutes == time.minutes)
 	{
@@ -56,6 +56,30 @@ bool Time::operator!=(const Time & time)
 	else
 	{
 		return true;
+	}
+}
+
+bool Time::operator>(const Time & time)
+{
+	if (months > time.months)
+	{
+		return true;
+	}
+	else if (days > time.days)
+	{
+		return true;
+	}
+	else if (hours > time.hours)
+	{
+		return true;
+	}
+	else if (minutes > time.minutes)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
 	}
 }
 
@@ -109,7 +133,6 @@ Time Time::operator+(const Time & time)
 
 	return Time(mo, da, ho, mi);
 }
-
 
 Time & Time::operator+=(const Time & time)
 {
