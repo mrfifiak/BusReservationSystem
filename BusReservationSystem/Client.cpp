@@ -35,6 +35,37 @@ void Client::change_data(string newname)
 #endif
 }
 
+bool Client::does_overlap(Time ntdep, Time ntdur)
+{
+	if (booked_trips.empty())
+	{
+		return false;
+	}
+	else
+	{
+		list<Trip*>::iterator it; 
+		for (it = booked_trips.begin(); it != booked_trips.end(); ++it)
+		{
+			Time depar = (*it)->getDep();
+			Time temp = ntdep + ntdur;
+			if (depar > ntdep && temp > depar)
+			{
+				return true;
+			}
+		}
+		for (it = booked_trips.begin(); it != booked_trips.end(); ++it)
+		{
+			Time depar = (*it)->getDep();
+			Time temp = (*it)->getDep() + (*it)->getDur;
+			if (ntdep > depar && temp > ntdep)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+}
+
 // books trip with given id
 return_state Client::book_trip(int id)
 {

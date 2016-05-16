@@ -40,6 +40,18 @@ Trip::~Trip()
 #endif
 }
 
+// generic getter
+Time Trip::getDep()
+{
+	return departure;
+}
+
+// generic getter
+Time Trip::getDur()
+{
+	return duration;
+}
+
 // returns true if the number of enrolled passengers >= bus capacity
 bool Trip::isfull()
 {
