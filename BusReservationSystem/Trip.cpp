@@ -40,7 +40,6 @@ Trip::~Trip()
 #endif
 }
 
-
 // returns true if the number of enrolled passengers >= bus capacity
 bool Trip::isfull()
 {
@@ -96,21 +95,26 @@ void Trip::dismiss_bus()
 }
 
 // changes all the attributes of the departure time
-return_state Trip::change_departure_time(int mo, int da, int ho, int mi)
+void Trip::change_departure_time(int mo, int da, int ho, int mi)
 {
-	return return_state();
+	departure.months = mo;
+	departure.days = da;
+	departure.hours = ho;
+	departure.minutes = mi;
 }
 
 // changes the time (hh:mm) of the departure
-return_state Trip::change_departure_time(int ho, int mi)
+void Trip::change_departure_time(int ho, int mi)
 {
-	return return_state();
+	departure.hours = ho;
+	departure.minutes = mi;
 }
 
 // changes the date of the departure
-return_state Trip::change_departure_date(int mo, int da)
+void Trip::change_departure_date(int mo, int da)
 {
-	return return_state();
+	departure.months = mo;
+	departure.days = da;
 }
 
 // prints enrolled clients
