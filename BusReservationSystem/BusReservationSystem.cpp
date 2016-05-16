@@ -158,6 +158,10 @@ void BusReservationSystem::assign_bus_to_trip(int bid, int tid)
 	{
 		rs = FAIL_NOT_FOUND;
 		rstate("Bus", rs);
+		if (astrip == trips.end())
+		{
+			rstate("Trip", rs);
+		}
 		return;
 	}
 	if (astrip == trips.end())

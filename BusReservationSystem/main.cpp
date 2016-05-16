@@ -1,7 +1,7 @@
 //#define _BUSTEST
 //#define _CLIENTTEST
-#define _TRIPTEST
-//#define _ASSIGNTEST
+//#define _TRIPTEST
+#define _ASSIGNTEST
 
 #include "busreservationsystem.h"
 #include "bus.h"
@@ -29,14 +29,14 @@ int main()
 
 #ifdef _TRIPTEST
 	new_trip(b1);
-	
+	cout << b1.trips.front() << endl;
 #endif
 
 #ifdef _ASSIGNTEST
 	b1.new_bus(20);
 	new_trip(b1);
-	b1.assign_bus_to_trip(0, 0);
-	cout << &(*b1.trips.begin());
+	b1.assign_bus_to_trip(1, 1);
+	cout << b1.trips.front();
 #endif
 
 

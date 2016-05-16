@@ -111,6 +111,13 @@ void Trip::print_clients()
 // operator <<
 ostream & operator<<(ostream & o, Trip const & t)
 {
-	o << t.id << "\t" << t.from << "\t" << t.to << "\t" << t.distance << "\t" << t.departure << "\t" << t.duration << "\t" << t.assigned_bus->getID() << "\t" << t.enrolled_clients.size();
+	if (t.assigned_bus)
+	{
+		o << t.id << "\t" << t.from << "\t" << t.to << "\t" << t.distance << "\t" << t.departure << "\t" << t.duration << "\t" << t.assigned_bus->getID() << "\t" << t.enrolled_clients.size();
+	}
+	else
+	{
+		o << t.id << "\t" << t.from << "\t" << t.to << "\t" << t.distance << "\t" << t.departure << "\t" << t.duration << "\tNO BUS\t" << t.enrolled_clients.size();
+	}
 	return o;
 }
