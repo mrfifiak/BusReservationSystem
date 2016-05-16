@@ -146,8 +146,30 @@ void BusReservationSystem::check_trips()
 }
 
 // choose a bus, then choose the trip
-void BusReservationSystem::assign_bus_to_trip()
+void BusReservationSystem::assign_bus_to_trip(int bid, int tid)
 {
+	list<Bus>::iterator asbus = findID(buses, bid);
+	list<Trip>::iterator astrip = findID(trips, tid);
+	return_state rs;
+
+	/* dealing with cases when there's no such bus/trip */
+	if (asbus == buses.end())
+	{
+		rs = FAIL_NOT_FOUND;
+		rstate("Bus", rs);
+		return;
+	}
+	if (astrip == trips.end())
+	{
+		rs = FAIL_NOT_FOUND;
+		rstate("Trip", rs);
+		return;
+	}
+
+	list<Bus>::iterator oldbus = findID(buses, astrip->getBusID());
+	list<Trip>::iterator oldtrip = findID(trips, asbus->getTripID());
+
+
 }
 
 // choose the bus

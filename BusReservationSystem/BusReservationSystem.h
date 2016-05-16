@@ -34,7 +34,7 @@ public:
 	void remove_trip(int id);	// removes a trip
 	void check_trips();	// checks if all the trips have their buses
 	
-	void assign_bus_to_trip();	// choose a bus, then choose the trip
+	void assign_bus_to_trip(int bid, int tid);	// choose a bus, then choose the trip
 	void dismiss_a_bus();	// choose the bus
 	void assign_trip_to_bus();	// choose a trip, then choose the bus
 	void dismiss_a_trip();	// choose the trip

@@ -36,6 +36,18 @@ int Bus::getCapacity()
 	return capacity;
 }
 
+int Bus::getTripID()
+{
+	if (assigned_trip == NULL)
+	{
+		return -1;
+	}
+	else
+	{
+		return assigned_trip->getID();
+	}
+}
+
 // assigns trip with given id
 return_state Bus::assign_trip(int id)
 {
@@ -43,9 +55,9 @@ return_state Bus::assign_trip(int id)
 }
 
 // dismisses the assigned trip
-return_state Bus::dismiss_trip()
+void Bus::dismiss_trip()
 {
-	return return_state();
+	assigned_trip = NULL;
 }
 
 // operator <<

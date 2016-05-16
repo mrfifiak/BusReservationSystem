@@ -51,7 +51,6 @@ typename list<T>::iterator findID(list<T>& source, int id)
 		}
 	}
 return it;
-
 }
 
 #endif	// !MYLIB_H

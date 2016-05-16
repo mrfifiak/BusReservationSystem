@@ -61,6 +61,18 @@ int Trip::getID()
 	return id;
 }
 
+int Trip::getBusID()
+{
+	if (assigned_bus == NULL)
+	{
+		return -1;
+	}
+	else
+	{
+		return assigned_bus->getID();
+	}
+}
+
 // assign bus with given id
 return_state Trip::assign_bus(int id)
 {
@@ -68,9 +80,9 @@ return_state Trip::assign_bus(int id)
 }
 
 // dismiss the assigned bus
-return_state Trip::dismiss_bus()
+void Trip::dismiss_bus()
 {
-	return return_state();
+	assigned_bus = NULL;
 }
 
 // changes all the attributes of the departure time

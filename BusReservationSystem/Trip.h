@@ -42,8 +42,9 @@ public:
 	bool isfull();	// returns true if the number of enrolled passengers passengers == bus capacity
 	bool hasbus();	// returns true if the trip has a bus assigned
 	int getID();	// generic getter
+	int getBusID();	// returns assigned bus' ID, -1 if no bus assigned
 	return_state assign_bus(int id);	// assign bus with given id
-	return_state dismiss_bus();	// dismiss the assigned bus
+	void dismiss_bus();	// dismiss the assigned bus
 	return_state change_departure_time(int mo, int da, int ho, int mi);	// changes all the attributes of the departure time
 	return_state change_departure_time(int ho, int mi);	// changes the time (hh:mm) of the departure
 	return_state change_departure_date(int mo, int da);	// changes the date of the departure

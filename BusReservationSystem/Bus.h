@@ -30,8 +30,9 @@ public:
 
 	int getID();	// returns ID
 	int getCapacity();	// returns capacity
+	int getTripID();	// returns ID of assigned trip, -1 if no trip assigned 
 	return_state assign_trip(int id);	// assigns trip with given id
-	return_state dismiss_trip();	// dismisses the assigned trip
+	void dismiss_trip();	// dismisses the assigned trip
 
 	friend ostream & operator<<(ostream &o, Bus const &b);	// operator <<
 
