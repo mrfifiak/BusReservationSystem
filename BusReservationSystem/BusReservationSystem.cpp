@@ -233,6 +233,7 @@ void BusReservationSystem::assign_bus_to_trip(int bid, int tid)
 
 }
 
+// changes trip's data
 void BusReservationSystem::change_trip_departure_time(int id, int mo, int da, int ho, int mi)
 {
 	list<Trip>::iterator trip = findID(trips, id);
@@ -249,6 +250,7 @@ void BusReservationSystem::change_trip_departure_time(int id, int mo, int da, in
 	rstate("Trip", rs);
 }
 
+// changes trip's data
 void BusReservationSystem::change_trip_departure_time(int id, int ho, int mi)
 {
 	list<Trip>::iterator trip = findID(trips, id);
@@ -265,6 +267,7 @@ void BusReservationSystem::change_trip_departure_time(int id, int ho, int mi)
 	rstate("Trip", rs);
 }
 
+// changes trip's data
 void BusReservationSystem::change_trip_date(int id, int mo, int da)
 {
 	list<Trip>::iterator trip = findID(trips, id);
