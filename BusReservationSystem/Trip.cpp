@@ -130,7 +130,7 @@ void Trip::print_clients()
 		cout << "ID\tName" << endl;
 		while (it != enrolled_clients.end())
 		{
-			cout << (&(*it));
+			cout << **it << endl;
 			++it;
 		}
 	}

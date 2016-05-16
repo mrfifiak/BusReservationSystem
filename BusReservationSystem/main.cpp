@@ -1,7 +1,8 @@
 //#define _BUSTEST
-#define _CLIENTTEST
+//#define _CLIENTTEST
 //#define _TRIPTEST
 //#define _ASSIGNTEST
+#define _ENROLLTEST
 
 #include "busreservationsystem.h"
 #include "bus.h"
@@ -44,6 +45,16 @@ int main()
 	b1.check_trips();
 	b1.assign_bus_to_trip(0, 0);
 	b1.check_trips();
+#endif
+
+#ifdef _ENROLLTEST
+	Client * c1tr = new Client("Filip");
+	Client * c2tr = new Client("Asia");
+	Trip trip = Trip("w", "e", 34, 3, 3, 3, 3, 4, 4);
+	trip.enrolled_clients.push_back(c1tr);
+	trip.enrolled_clients.push_back(c2tr);
+	trip.print_clients();
+	trip.print_clients();
 #endif
 
 

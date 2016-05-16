@@ -91,7 +91,7 @@ void BusReservationSystem::remove_bus(int id)
 	rstate("Bus", rs);
 }
 
-// choose the bus
+// dismiss selected bus from the trip and vice versa
 void BusReservationSystem::free_bus(int id)
 {
 	list<Bus>::iterator fbus = findID(buses, id);
@@ -165,7 +165,7 @@ void BusReservationSystem::check_trips()
 	}
 }
 
-// choose the trip
+// dismiss selected trip from the bus and vice versa
 void BusReservationSystem::free_trip(int id)
 {
 	list<Trip>::iterator ftrip = findID(trips, id);
@@ -284,11 +284,12 @@ void BusReservationSystem::change_trip_date(int id, int mo, int da)
 	rstate("Trip", rs);
 }
 
-// prints all trips with buses and clients
+// prints all trips with bus ID and number of clients
 void BusReservationSystem::print_trips()
 {
 }
 
+// prints trip's basic data with list of clients
 void BusReservationSystem::print_trip_clients(int id)
 {
 }
@@ -297,7 +298,3 @@ void BusReservationSystem::print_trip_clients(int id)
 void BusReservationSystem::print_timetable()
 {
 }
-
-
-
-

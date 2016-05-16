@@ -29,12 +29,12 @@ public:
 
 	void new_bus(int cap);	// creates a bus
 	void remove_bus(int id);	// removes a bus
-	void free_bus(int id);	// choose the bus
+	void free_bus(int id);	// dismiss selected bus from the trip and vice versa
 
 	void new_trip(string from, string to, unsigned int di, Time dep, Time dur);	// creates a new trip
 	void remove_trip(int id);	// removes a trip
 	void check_trips();	// checks if all the trips have their buses
-	void free_trip(int id);	// choose the trip
+	void free_trip(int id);	// dismiss selected trip from the bus and vice versa
 	
 	void assign_bus_to_trip(int bid, int tid);	// assigns bus to a trip and vice versa
 
