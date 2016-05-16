@@ -151,6 +151,7 @@ void BusReservationSystem::assign_bus_to_trip(int bid, int tid)
 	list<Bus>::iterator asbus = findID(buses, bid);
 	list<Trip>::iterator astrip = findID(trips, tid);
 	return_state rs;
+	int temp;
 
 	/* dealing with cases when there's no such bus/trip */
 	if (asbus == buses.end())
@@ -166,9 +167,25 @@ void BusReservationSystem::assign_bus_to_trip(int bid, int tid)
 		return;
 	}
 
-	list<Bus>::iterator oldbus = findID(buses, astrip->getBusID());
-	list<Trip>::iterator oldtrip = findID(trips, asbus->getTripID());
+	/* dealing with old buses and trips assigned */
+	temp = astrip->getBusID();
+	if (temp != -1)
+	{
+		list<Bus>::iterator oldbus = findID(buses, temp);
+		oldbus->dismiss_trip();
+	}
+	temp = asbus->getTripID();
+	if (temp != -1)
+	{
+		list<Trip>::iterator oldtrip = findID(trips, temp);
+		oldtrip->dismiss_bus();
+	}
 
+	Trip* newtrip = &(*astrip);
+	Bus* newbus = &(*asbus);
+
+	asbus->assign_trip(newtrip);
+	astrip->assign_bus(newbus);
 
 }
 

@@ -49,9 +49,9 @@ int Bus::getTripID()
 }
 
 // assigns trip with given id
-return_state Bus::assign_trip(int id)
+void Bus::assign_trip(Trip* newtrip)
 {
-	return return_state();
+	assigned_trip = newtrip;
 }
 
 // dismisses the assigned trip

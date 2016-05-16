@@ -74,9 +74,9 @@ int Trip::getBusID()
 }
 
 // assign bus with given id
-return_state Trip::assign_bus(int id)
+void Trip::assign_bus(Bus *newbus)
 {
-	return return_state();
+	assigned_bus = newbus;
 }
 
 // dismiss the assigned bus
@@ -111,5 +111,6 @@ void Trip::print_clients()
 // operator <<
 ostream & operator<<(ostream & o, Trip const & t)
 {
+	o << t.id << "\t" << t.from << "\t" << t.to << "\t" << t.distance << "\t" << t.departure << "\t" << t.duration << "\t" << t.assigned_bus->getID() << "\t" << t.enrolled_clients.size();
 	return o;
 }
