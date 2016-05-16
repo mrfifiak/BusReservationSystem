@@ -281,11 +281,6 @@ void BusReservationSystem::change_trip_date(int id, int mo, int da)
 	rstate("Trip", rs);
 }
 
-// changes trip's data
-void BusReservationSystem::change_trip_data()
-{
-}
-
 // prints all trips with buses and clients
 void BusReservationSystem::print_trips()
 {
