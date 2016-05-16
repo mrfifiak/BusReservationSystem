@@ -41,12 +41,20 @@ Trip::~Trip()
 }
 
 
-// returns true if the number of enrolled passengers == bus capacity
+// returns true if the number of enrolled passengers >= bus capacity
 bool Trip::isfull()
 {
-	return false;
+	if (enrolled_clients.size() >= assigned_bus->getCapacity())
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
+// returns true if the trip has a bus assigned
 bool Trip::hasbus()
 {
 	if (assigned_bus != NULL)
@@ -56,11 +64,13 @@ bool Trip::hasbus()
 	return false;
 }
 
+//generic getter
 int Trip::getID()
 {
 	return id;
 }
 
+// returns assigned bus' ID, -1 if no bus assigned
 int Trip::getBusID()
 {
 	if (assigned_bus == NULL)

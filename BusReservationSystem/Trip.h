@@ -39,7 +39,7 @@ public:
 	Trip(string f, string t, unsigned int di, Time dep, Time dur);
 	~Trip();	// destructor
 
-	bool isfull();	// returns true if the number of enrolled passengers passengers == bus capacity
+	bool isfull();	// returns true if the number of enrolled passengers passengers >= bus capacity
 	bool hasbus();	// returns true if the trip has a bus assigned
 	int getID();	// generic getter
 	int getBusID();	// returns assigned bus' ID, -1 if no bus assigned

@@ -63,6 +63,6 @@ void Bus::dismiss_trip()
 // operator <<
 ostream & operator<<(ostream & o, Bus const & b)
 {
-	o << "Bus ID: " << b.id << " capacity " << b.capacity;
+	o << "Bus ID: " << b.id << " capacity: " << b.capacity;
 	return o;
 }

@@ -40,8 +40,10 @@ public:
 
 
 	void change_trip_data();	// changes trip's data
-	void print_trips();	// prints all trips with buses and clients
+	void print_trips();	// prints all trips' data with bus ID and number of clients
+	void print_trip_clients(int id);	// prints trip's basic data with list of clients
 	void print_timetable();	// prints all trips' basic data
+
 	
 };
 

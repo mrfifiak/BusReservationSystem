@@ -243,9 +243,15 @@ void BusReservationSystem::print_trips()
 {
 }
 
+void BusReservationSystem::print_trip_clients(int id)
+{
+}
+
 // prints all trips' basic data
 void BusReservationSystem::print_timetable()
 {
 }
+
+
 
 
