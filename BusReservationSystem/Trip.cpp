@@ -120,6 +120,20 @@ void Trip::change_departure_date(int mo, int da)
 // prints enrolled clients
 void Trip::print_clients()
 {
+	if (enrolled_clients.empty())
+	{
+		cout << "No clients enrolled for this trip." << endl;
+	}
+	else
+	{
+		list<Client*>::iterator it = enrolled_clients.begin();
+		cout << "ID\tName" << endl;
+		while (it != enrolled_clients.end())
+		{
+			cout << (&(*it));
+			++it;
+		}
+	}
 }
 
 // operator <<
@@ -127,11 +141,11 @@ ostream & operator<<(ostream & o, Trip const & t)
 {
 	if (t.assigned_bus)
 	{
-		o << t.id << "\t" << t.from << "\t" << t.to << "\t" << t.distance << "\t" << t.departure << "\t" << t.duration << "\t" << t.assigned_bus->getID() << "\t" << t.enrolled_clients.size();
+		o << t.id << "\t" << t.from << "\t" << t.to << "\t" << t.distance << "km\t" << t.departure << "\t" << t.duration << "\t" << t.assigned_bus->getID() << "\t" << t.enrolled_clients.size();
 	}
 	else
 	{
-		o << t.id << "\t" << t.from << "\t" << t.to << "\t" << t.distance << "\t" << t.departure << "\t" << t.duration << "\tNO BUS\t" << t.enrolled_clients.size();
+		o << t.id << "\t" << t.from << "\t" << t.to << "\t" << t.distance << "km\t" << t.departure << "\t" << t.duration << "\tNO BUS\t" << t.enrolled_clients.size();
 	}
 	return o;
 }
