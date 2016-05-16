@@ -37,6 +37,7 @@ public:
 	void free_trip(int id);	// dismiss selected trip from the bus and vice versa
 	
 	void assign_bus_to_trip(int bid, int tid);	// assigns bus to a trip and vice versa
+	void enroll_client_to_trip(int cid, int tid);	// enrolls client to a trip and vice versa
 
 
 	void change_trip_departure_time(int id, int mo, int da, int ho, int mi);	// changes trip's data

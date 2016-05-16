@@ -233,6 +233,45 @@ void BusReservationSystem::assign_bus_to_trip(int bid, int tid)
 
 }
 
+// enrolls client to a trip and vice versa
+void BusReservationSystem::enroll_client_to_trip(int cid, int tid)
+{
+	list<Client>::iterator elclient = findID(clients, cid);
+	list<Trip>::iterator eltrip = findID(trips, tid);
+	return_state rs;
+	int temp;
+
+	/* dealing with cases when there's no such client/trip */
+	if (elclient == clients.end())
+	{
+		rs = FAIL_NOT_FOUND;
+		rstate("Client", rs);
+		if (eltrip == trips.end())
+		{
+			rstate("Trip", rs);
+		}
+		return;
+	}
+	if (eltrip == trips.end())
+	{
+		rs = FAIL_NOT_FOUND;
+		rstate("Trip", rs);
+		return;
+	}
+
+	/* checks if the trip is full */
+	if (eltrip->isfull())
+	{
+		rs = FAIL_FULL;
+		rstate("Trip", rs);
+	}
+	/* checks if the trip overlaps with another one */
+	else if()
+	{
+
+	}
+}
+
 // changes trip's data
 void BusReservationSystem::change_trip_departure_time(int id, int mo, int da, int ho, int mi)
 {
