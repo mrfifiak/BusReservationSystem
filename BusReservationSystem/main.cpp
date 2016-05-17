@@ -23,18 +23,42 @@ int main()
 	brs.new_trip("Poznan", "Wroclaw", 170, 5, 21, 18, 30, 3, 10);
 	brs.new_trip("Poznan", "Wroclaw", 170, 5, 21, 20, 15, 3, 10);
 	brs.new_bus(2);
-	brs.new_bus(5);
 	brs.new_bus(2);
 	brs.new_bus(2);
+	brs.new_bus(2);
+	brs.new_bus(4);
+	brs.print_trips();
+	cout << endl << "TEST1" << endl;
 	brs.check_trips();
 	brs.check_buses();
 	brs.assign_bus_to_trip(0, 0);
+	brs.assign_bus_to_trip(1, 3);
+	brs.assign_bus_to_trip(3, 3);
+	brs.assign_bus_to_trip(4, 4);
+	brs.assign_bus_to_trip(4, 1);
+	brs.assign_bus_to_trip(2, 15);
+	brs.assign_bus_to_trip(15, 2);
+	brs.assign_bus_to_trip(15, 15);
+	brs.print_trips();
+	cout << endl << "TEST2" << endl;
+	brs.check_trips();
+	brs.check_buses();
 	brs.enroll_client_to_trip(0, 0);
-	cout << brs.trips.front() << endl;
-	brs.trips.front().print_clients();
-	brs.cancel_trip(0, 0);
-	cout << brs.trips.front() << endl;
-	brs.trips.front().print_clients();
+	brs.enroll_client_to_trip(0, 3);
+	brs.enroll_client_to_trip(1, 0);
+	brs.enroll_client_to_trip(2, 0);
+	brs.enroll_client_to_trip(0, 1);
+	brs.enroll_client_to_trip(1, 1);
+	brs.enroll_client_to_trip(2, 1);
+	brs.enroll_client_to_trip(3, 1);
+	brs.enroll_client_to_trip(15, 0);
+	brs.enroll_client_to_trip(0, 15);
+	brs.print_trips();
+	cout << endl << "TEST3" << endl;
+	brs.print_timetable();
+	brs.print_trip_clients(0);
+	brs.print_trip_clients(2);
+	brs.print_trip_clients(1);
 
 
 

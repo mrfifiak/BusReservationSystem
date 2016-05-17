@@ -25,6 +25,7 @@ public:
 	bool operator ==(const Time& time) const;
 	bool operator !=(const Time& time) const;
 	bool operator >(const Time& time) const;
+	bool operator <(const Time& time) const;
 	Time& operator =(const Time& time);
 	Time operator +(const Time& time) const;
 	Time& operator +=(const Time& time);

@@ -55,6 +55,8 @@ public:
 	void change_departure_date(int mo, int da); // changes the date of the departure
 	void print_clients(); // prints enrolled clients
 
+	bool operator <(const Trip& trip) const;
+
 	friend ostream& operator<<(ostream& o, Trip const& t); // operator <<
 };
 

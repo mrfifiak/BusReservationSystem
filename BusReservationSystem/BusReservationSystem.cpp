@@ -4,14 +4,11 @@
 // return true if t1 starts before t2
 bool BusReservationSystem::compareTrips(const Trip& t1, const Trip& t2)
 {
-	if (t2.getDep() > t1.getDep())
+	if (t1.getDep() < t2.getDep())
 	{
 		return true;
 	}
-	else
-	{
-		return false;
-	}
+	return false;
 }
 
 // default constructor
@@ -328,6 +325,9 @@ void BusReservationSystem::assign_bus_to_trip(int bid, int tid)
 
 	asbus->assign_trip(newtrip);
 	astrip->assign_bus(newbus);
+
+	rs = SUCCESS;
+	rstate("", rs);
 }
 
 // enrolls client to a trip and vice versa
@@ -370,7 +370,6 @@ void BusReservationSystem::enroll_client_to_trip(int cid, int tid)
 	{
 		rs = FAIL_OVERLAP;
 	}
-
 	else
 	{
 		Trip* newtrip = &(*eltrip);
@@ -458,7 +457,7 @@ void BusReservationSystem::print_trip_clients(int id)
 void BusReservationSystem::print_timetable()
 {
 	list<Trip>::iterator it;
-	trips.sort(compareTrips);
+	trips.sort();
 
 	cout << "Departure\tFrom\tTo" << endl;
 	for (it = trips.begin(); it != trips.end(); ++it)

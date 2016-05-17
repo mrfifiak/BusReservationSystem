@@ -65,22 +65,40 @@ bool Time::operator>(const Time& time) const
 	{
 		return true;
 	}
-	else if (days > time.days)
+	if (days > time.days)
 	{
 		return true;
 	}
-	else if (hours > time.hours)
+	if (hours > time.hours)
 	{
 		return true;
 	}
-	else if (minutes > time.minutes)
+	if (minutes > time.minutes)
 	{
 		return true;
 	}
-	else
+	return false;
+}
+
+bool Time::operator<(const Time& time) const
+{
+	if (months < time.months)
 	{
-		return false;
+		return true;
 	}
+	if (days < time.days)
+	{
+		return true;
+	}
+	if (hours < time.hours)
+	{
+		return true;
+	}
+	if (minutes < time.minutes)
+	{
+		return true;
+	}
+	return false;
 }
 
 Time& Time::operator=(const Time& time)
