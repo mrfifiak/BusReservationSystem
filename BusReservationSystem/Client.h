@@ -14,31 +14,27 @@ class Trip;
 enum return_state;
 
 
-
 class Client
 {
-
 private:
-	int id;	// client's identification number
-	string name;	// name and surname
-	list<Trip*> booked_trips;	// list of pointers to trips which the client booked
+	int id; // client's identification number
+	string name; // name and surname
+	list<Trip*> booked_trips; // list of pointers to trips which the client booked
 
-	static int id_counter;	// static variable used to assign new ids
+	static int id_counter; // static variable used to assign new ids
 
 public:
-	explicit Client(string n);	// constructor with name
-	~Client();	// destructor
+	explicit Client(string n); // constructor with name
+	~Client(); // destructor
 
-	int getID() const;	// returns ID
-	void change_data(string newname);	// changes the name of the client
-	bool is_enrolled(int tid);	// checks if the client is enrolled to the trip with given ID
-	bool does_overlap(Time ntdep, Time ntdur);	// checks if the trip with ntdep and ntdur values overlaps with the trips the client already enrolled to
-	void book_trip(Trip* newtrip);	// books given trip
-	void cancel_trip(Trip* deltrip);	// cancels given trip
+	int getID() const; // returns ID
+	void change_data(string newname); // changes the name of the client
+	bool is_enrolled(int tid); // checks if the client is enrolled to the trip with given ID
+	bool does_overlap(Time ntdep, Time ntdur); // checks if the trip with ntdep and ntdur values overlaps with the trips the client already enrolled to
+	void book_trip(Trip* newtrip); // books given trip
+	void cancel_trip(Trip* deltrip); // cancels given trip
 
-	friend ostream & operator<<(ostream & o, Client const & c);	// operator <<
-
-
+	friend ostream& operator<<(ostream& o, Client const& c); // operator <<
 };
 
 

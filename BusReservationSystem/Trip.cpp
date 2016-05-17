@@ -11,7 +11,7 @@ Trip::Trip(string f, string t, unsigned int di, int depmo, int depda, int depho,
 	distance = di;
 	departure = Time(depmo, depda, depho, depmi);
 	duration = Time(durho, durmi);
-	assigned_bus = NULL;
+	assigned_bus = nullptr;
 	id = id_counter++;
 #ifdef _DEBUG
 	cout << "Constructor Trip " << id << ' ' << f << " -> " << t << ' ' << distance << "km " << departure << ' ' << duration << endl;
@@ -25,7 +25,7 @@ Trip::Trip(string f, string t, unsigned int di, Time dep, Time dur)
 	distance = di;
 	departure = dep;
 	duration = dur;
-	assigned_bus = NULL;
+	assigned_bus = nullptr;
 	id = id_counter++;
 #ifdef _DEBUG
 	cout << "Constructor Trip " << id << ' ' << f << " -> " << t << ' ' << distance << "km " << departure << ' ' << duration << endl;
@@ -68,7 +68,7 @@ bool Trip::isfull() const
 // returns true if the trip has a bus assigned
 bool Trip::hasbus() const
 {
-	if (assigned_bus != NULL)
+	if (assigned_bus != nullptr)
 	{
 		return true;
 	}
@@ -96,7 +96,7 @@ string Trip::GetTo() const
 // returns assigned bus' ID, -1 if no bus assigned
 int Trip::getBusID() const
 {
-	if (assigned_bus == NULL)
+	if (assigned_bus == nullptr)
 	{
 		return -1;
 	}
@@ -127,7 +127,7 @@ void Trip::delete_client(Client * delclient)
 // dismiss the assigned bus
 void Trip::dismiss_bus()
 {
-	assigned_bus = NULL;
+	assigned_bus = nullptr;
 }
 
 // changes all the attributes of the departure time

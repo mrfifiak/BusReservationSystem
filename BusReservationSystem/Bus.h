@@ -15,26 +15,24 @@ enum return_state;
 
 class Bus
 {
-
 private:
-	int id;	// bus' identification number
-	int capacity;	// how many passengers can sit
-	Trip* assigned_trip;	// the trip which the bus is assigned to
+	int id; // bus' identification number
+	int capacity; // how many passengers can sit
+	Trip* assigned_trip; // the trip which the bus is assigned to
 
-	static int id_counter;	// static variable used to assign new ids
+	static int id_counter; // static variable used to assign new ids
 
 public:
-	explicit Bus(int cap);	// constructor which sets bus' capacity
-	~Bus();	//destructor
+	explicit Bus(int cap); // constructor which sets bus' capacity
+	~Bus(); //destructor
 
-	int getID() const;	// returns ID
-	int getCapacity() const;	// returns capacity
-	int getTripID() const;	// returns ID of assigned trip, -1 if no trip assigned 
-	void assign_trip(Trip* newtrip);	// assigns trip with given id
-	void dismiss_trip();	// dismisses the assigned trip
+	int getID() const; // returns ID
+	int getCapacity() const; // returns capacity
+	int getTripID() const; // returns ID of assigned trip, -1 if no trip assigned 
+	void assign_trip(Trip* newtrip); // assigns trip with given id
+	void dismiss_trip(); // dismisses the assigned trip
 
-	friend ostream & operator<<(ostream &o, Bus const &b);	// operator <<
-
+	friend ostream& operator<<(ostream& o, Bus const& b); // operator <<
 };
 
 

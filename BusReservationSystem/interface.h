@@ -7,7 +7,7 @@
 
 #include "busreservationsystem.h"
 
-void menu();	// main menu
+void menu(); // main menu
 
 void new_client(BusReservationSystem& brs);
 void remove_client(BusReservationSystem& brs);

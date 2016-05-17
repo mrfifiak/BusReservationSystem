@@ -7,11 +7,19 @@
 
 using namespace std;
 
-enum return_state { SUCCESS, FAIL_NOT_FOUND, FAIL_FULL, FAIL_NOT_BOOKED, FAIL_OVERLAP, FAIL_NO_BUS };	// says whether the method succeeded
+enum return_state
+{
+	SUCCESS,
+	FAIL_NOT_FOUND,
+	FAIL_FULL,
+	FAIL_NOT_BOOKED,
+	FAIL_OVERLAP,
+	FAIL_NO_BUS
+}; // says whether the method succeeded
 
-																			
+
 // prints the effect depending on return_state value
-inline void rstate(string s, return_state rs)	
+inline void rstate(string s, return_state rs)
 {
 	switch (rs)
 	{
@@ -39,13 +47,12 @@ inline void rstate(string s, return_state rs)
 	case FAIL_NO_BUS:
 		cout << "Failed, " << s << " has no bus assigned." << endl;
 		break;
-
 	}
 }
 
 
 // returns pointer to an object from source list with given id
-template<typename T>
+template <typename T>
 typename list<T>::iterator findID(list<T>& source, int id)
 {
 	typename list<T>::iterator it;
@@ -58,7 +65,7 @@ typename list<T>::iterator findID(list<T>& source, int id)
 			break;
 		}
 	}
-return it;
+	return it;
 }
 
 #endif	// !MYLIB_H

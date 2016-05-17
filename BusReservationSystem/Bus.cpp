@@ -10,7 +10,7 @@ Bus::Bus(int cap)
 {
 	capacity = cap;
 	id = id_counter++;
-	assigned_trip = NULL;
+	assigned_trip = nullptr;
 #ifdef _DEBUG
 		cout << "Created Bus with capacity " << capacity << " (ID: " << id << ")" << endl;
 #endif
@@ -39,7 +39,7 @@ int Bus::getCapacity() const
 // returns ID of assigned trip
 int Bus::getTripID() const
 {
-	if (assigned_trip == NULL)
+	if (assigned_trip == nullptr)
 	{
 		return -1;
 	}
@@ -58,7 +58,7 @@ void Bus::assign_trip(Trip* newtrip)
 // dismisses the assigned trip
 void Bus::dismiss_trip()
 {
-	assigned_trip = NULL;
+	assigned_trip = nullptr;
 }
 
 // operator <<

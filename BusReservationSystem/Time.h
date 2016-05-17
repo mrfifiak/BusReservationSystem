@@ -16,20 +16,20 @@ public:
 	int hours;
 	int minutes;
 
-	Time();	/*	TO DELETE	*/
-	Time(int ho, int mi);	// constructor with months=0, days=0, hours=ho, minutes=mi
-	Time(int mo, int da, int ho, int mi);	// constructor with months=mo, days=da, hours=ho, minutes=mi
-	~Time();	// destructor
+	Time(); /*	TO DELETE	*/
+	Time(int ho, int mi); // constructor with months=0, days=0, hours=ho, minutes=mi
+	Time(int mo, int da, int ho, int mi); // constructor with months=mo, days=da, hours=ho, minutes=mi
+	~Time(); // destructor
 
 	/* OPERATORS */
-	bool operator == (const Time &time) const;
-	bool operator != (const Time &time) const;
-	bool operator > (const Time &time) const;
-	Time& operator = (const Time &time);
-	Time operator + (const Time &time) const;
-	Time& operator += (const Time &time);
+	bool operator ==(const Time& time) const;
+	bool operator !=(const Time& time) const;
+	bool operator >(const Time& time) const;
+	Time& operator =(const Time& time);
+	Time operator +(const Time& time) const;
+	Time& operator +=(const Time& time);
 
-	friend ostream& operator<< (ostream&, Time const&);	// operator <<
+	friend ostream& operator<<(ostream&, Time const&); // operator <<
 };
 
 #endif	// !TIME_H
