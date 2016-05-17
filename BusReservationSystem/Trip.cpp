@@ -1,7 +1,7 @@
 #include "trip.h"
 
 
-int Trip::id_counter = 0;	// initializing id counter
+int Trip::id_counter = 0; // initializing id counter
 
 // constructor with all attributes
 Trip::Trip(string f, string t, unsigned int di, int depmo, int depda, int depho, int depmi, int durho, int durmi)
@@ -107,19 +107,19 @@ int Trip::getBusID() const
 }
 
 // assign given bus
-void Trip::assign_bus(Bus *newbus)
+void Trip::assign_bus(Bus* newbus)
 {
 	assigned_bus = newbus;
 }
 
 // enrolls given client
-void Trip::enroll_client(Client * newclient)
+void Trip::enroll_client(Client* newclient)
 {
 	enrolled_clients.push_back(newclient);
 }
 
 // deletes client from the enrolled list
-void Trip::delete_client(Client * delclient)
+void Trip::delete_client(Client* delclient)
 {
 	enrolled_clients.remove(delclient);
 }
@@ -173,7 +173,7 @@ void Trip::print_clients()
 }
 
 // operator <<
-ostream & operator<<(ostream & o, Trip const & t)
+ostream& operator<<(ostream& o, Trip const& t)
 {
 	if (t.assigned_bus)
 	{

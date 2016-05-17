@@ -1,6 +1,6 @@
 #include "client.h"
 
-int Client::id_counter = 0;	// initializing id counter
+int Client::id_counter = 0; // initializing id counter
 
 // constructor with name
 Client::Client(string n)
@@ -57,7 +57,7 @@ bool Client::does_overlap(Time ntdep, Time ntdur)
 	}
 	else
 	{
-		list<Trip*>::iterator it; 
+		list<Trip*>::iterator it;
 		for (it = booked_trips.begin(); it != booked_trips.end(); ++it)
 		{
 			Time depar = (*it)->getDep();
@@ -81,7 +81,7 @@ bool Client::does_overlap(Time ntdep, Time ntdur)
 }
 
 // books given trip
-void Client::book_trip(Trip * newtrip)
+void Client::book_trip(Trip* newtrip)
 {
 	booked_trips.push_back(newtrip);
 }
@@ -92,8 +92,8 @@ void Client::cancel_trip(Trip* deltrip)
 	booked_trips.remove(deltrip);
 }
 
-ostream & operator<<(ostream & o, Client const & c)
+ostream& operator<<(ostream& o, Client const& c)
 {
-	o <<  c.id << "\t" << c.name;
+	o << c.id << "\t" << c.name;
 	return o;
 }

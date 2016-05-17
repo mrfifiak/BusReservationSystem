@@ -4,7 +4,7 @@
 // return true if t1 starts before t2
 bool BusReservationSystem::compareTrips(const Trip& t1, const Trip& t2)
 {
-	if(t2.getDep() > t1.getDep())
+	if (t2.getDep() > t1.getDep())
 	{
 		return true;
 	}
@@ -37,7 +37,6 @@ void BusReservationSystem::new_client(string name)
 //removes a client
 void BusReservationSystem::remove_client(int id)
 {
-	
 	return_state rs;
 	list<Client>::iterator remclient;
 
@@ -76,7 +75,6 @@ void BusReservationSystem::change_client_data(int id)
 	else rs = FAIL_NOT_FOUND;
 
 	rstate("Client", rs);
-
 }
 
 // creates a bus
@@ -294,7 +292,6 @@ void BusReservationSystem::assign_bus_to_trip(int bid, int tid)
 
 	asbus->assign_trip(newtrip);
 	astrip->assign_bus(newbus);
-
 }
 
 // enrolls client to a trip and vice versa
@@ -330,10 +327,10 @@ void BusReservationSystem::enroll_client_to_trip(int cid, int tid)
 	/* checks if the trip is full */
 	else if (eltrip->isfull())
 	{
-		rs = FAIL_FULL;	
+		rs = FAIL_FULL;
 	}
 	/* checks if the trip overlaps with another one */
-	else if(elclient->does_overlap(eltrip->getDep(), eltrip->getDur()))
+	else if (elclient->does_overlap(eltrip->getDep(), eltrip->getDur()))
 	{
 		rs = FAIL_OVERLAP;
 	}
@@ -390,7 +387,6 @@ void BusReservationSystem::cancel_trip(int cid, int tid)
 	}
 
 	rstate("Trip", rs);
-
 }
 
 
@@ -399,7 +395,7 @@ void BusReservationSystem::print_trips()
 {
 	list<Trip>::iterator it;
 	cout << "Trip ID\tFrom\tTo\tDistance\tDeparture\tDuration\tBus ID\tClients enrolled" << endl;
-	for(it = trips.begin(); it != trips.end(); ++it)
+	for (it = trips.begin(); it != trips.end(); ++it)
 	{
 		cout << *it << endl;
 	}
@@ -410,7 +406,7 @@ void BusReservationSystem::print_trip_clients(int id)
 {
 	list<Trip>::iterator it;
 	it = findID(trips, id);
-	if(it == trips.end())
+	if (it == trips.end())
 	{
 		rstate("Trip", FAIL_NOT_FOUND);
 	}
@@ -429,9 +425,8 @@ void BusReservationSystem::print_timetable()
 	trips.sort(compareTrips);
 
 	cout << "Departure\tFrom\tTo" << endl;
-	for(it = trips.begin(); it != trips.end(); ++it)
+	for (it = trips.begin(); it != trips.end(); ++it)
 	{
 		cout << (*it).getDep() << (*it).getFrom() << (*it).GetTo() << endl;
 	}
-
 }

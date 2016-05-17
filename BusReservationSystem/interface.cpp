@@ -19,7 +19,7 @@ void new_client(BusReservationSystem& brs)
 	brs.new_client(name);
 }
 
-void remove_client(BusReservationSystem & brs)
+void remove_client(BusReservationSystem& brs)
 {
 	int id;
 
@@ -37,7 +37,7 @@ void remove_client(BusReservationSystem & brs)
 	brs.remove_client(id);
 }
 
-void change_client_data(BusReservationSystem & brs)
+void change_client_data(BusReservationSystem& brs)
 {
 	int id;
 
@@ -55,7 +55,7 @@ void change_client_data(BusReservationSystem & brs)
 	brs.change_client_data(id);
 }
 
-void new_bus(BusReservationSystem & brs)
+void new_bus(BusReservationSystem& brs)
 {
 	int cap;
 
@@ -73,7 +73,7 @@ void new_bus(BusReservationSystem & brs)
 	brs.new_bus(cap);
 }
 
-void remove_bus(BusReservationSystem & brs)
+void remove_bus(BusReservationSystem& brs)
 {
 	int id;
 
@@ -91,7 +91,7 @@ void remove_bus(BusReservationSystem & brs)
 	brs.remove_bus(id);
 }
 
-void new_trip(BusReservationSystem & brs)
+void new_trip(BusReservationSystem& brs)
 {
 	string from, f, to, t;
 	int di, depmo, depda, depho, depmi, durho, durmi;
@@ -104,7 +104,7 @@ void new_trip(BusReservationSystem & brs)
 	while (cin.peek() == ' ')
 	{
 		cin >> f;
-		from = from+ ' ' + f;
+		from = from + ' ' + f;
 	}
 
 	cout << endl << "Where does the trip end? ";
@@ -219,7 +219,7 @@ void new_trip(BusReservationSystem & brs)
 	brs.new_trip(from, to, di, dep, dur);
 }
 
-void remove_trip(BusReservationSystem & brs)
+void remove_trip(BusReservationSystem& brs)
 {
 	int id;
 

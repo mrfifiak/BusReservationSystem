@@ -14,7 +14,6 @@ using namespace std;
 
 int main()
 {
-
 	BusReservationSystem brs;
 
 
@@ -34,5 +33,4 @@ int main()
 
 
 	return 0;
-
 }

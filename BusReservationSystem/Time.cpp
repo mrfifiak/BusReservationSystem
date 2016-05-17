@@ -35,19 +35,19 @@ Time::~Time()
 {
 }
 
-bool Time::operator==(const Time & time) const
+bool Time::operator==(const Time& time) const
 {
-	if(months == time.months && days == time.days && hours == time.hours && minutes == time.minutes)
+	if (months == time.months && days == time.days && hours == time.hours && minutes == time.minutes)
 	{
 		return true;
 	}
-	else 
+	else
 	{
 		return false;
 	}
 }
 
-bool Time::operator!=(const Time & time) const
+bool Time::operator!=(const Time& time) const
 {
 	if (months == time.months && days == time.days && hours == time.hours && minutes == time.minutes)
 	{
@@ -59,7 +59,7 @@ bool Time::operator!=(const Time & time) const
 	}
 }
 
-bool Time::operator>(const Time & time) const
+bool Time::operator>(const Time& time) const
 {
 	if (months > time.months)
 	{
@@ -83,9 +83,10 @@ bool Time::operator>(const Time & time) const
 	}
 }
 
-Time & Time::operator=(const Time & time)
+Time& Time::operator=(const Time& time)
 {
-	if (this == &time) {
+	if (this == &time)
+	{
 		return *this;
 	}
 
@@ -97,7 +98,7 @@ Time & Time::operator=(const Time & time)
 	return *this;
 }
 
-Time Time::operator+(const Time & time) const
+Time Time::operator+(const Time& time) const
 {
 	int mo = 0, da = 0, ho = 0, mi = 0, temp;
 
@@ -134,7 +135,7 @@ Time Time::operator+(const Time & time) const
 	return Time(mo, da, ho, mi);
 }
 
-Time & Time::operator+=(const Time & time)
+Time& Time::operator+=(const Time& time)
 {
 	months += time.months;
 	days += time.days;
@@ -146,7 +147,7 @@ Time & Time::operator+=(const Time & time)
 
 
 // operator <<
-ostream & operator<<(ostream &o, Time const &t)
+ostream& operator<<(ostream& o, Time const& t)
 {
 	char buffer[12];
 	string out;
