@@ -122,6 +122,35 @@ void BusReservationSystem::free_bus(int id)
 	rstate("Bus", rs);
 }
 
+// checks if all the buses have a trip assigned
+void BusReservationSystem::check_busess()
+{
+	list<int> ids;
+	list<Bus>::iterator bi;
+	list<int>::iterator ii;
+
+	for (bi = buses.begin(); bi != buses.end(); ++bi)
+	{
+		if (bi->getTripID() == -1)
+		{
+			ids.push_back(bi->getID());
+		}
+	}
+
+	if (ids.empty())
+	{
+		cout << endl << "All buses have a trip assigned!" << endl;
+	}
+	else
+	{
+		cout << endl << "Buses with following id's have no trip assigned: " << endl;
+		for (ii = ids.begin(); ii != ids.end(); ++ii)
+		{
+			cout << *ii << endl;
+		}
+	}
+}
+
 // creates a new trip
 void BusReservationSystem::new_trip(string from, string to, unsigned int di, Time dep, Time dur)
 {
@@ -130,7 +159,7 @@ void BusReservationSystem::new_trip(string from, string to, unsigned int di, Tim
 }
 
 // creates a new trip
-void BusReservationSystem::new_trip(string from, string to, unsigned di, int depmo, int depda, int depho, int depmi, int durho, int durmi)
+void BusReservationSystem::new_trip(string from, string to, unsigned int di, int depmo, int depda, int depho, int depmi, int durho, int durmi)
 {
 	Trip* newtrip = new Trip(from, to, di, Time(depmo, depda, depho, depmi), Time(durho, durmi));
 	trips.push_back(*newtrip);

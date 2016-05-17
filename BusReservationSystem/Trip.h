@@ -27,17 +27,12 @@ private:
 	Time departure; // departure time in mm:dd:hh:mm
 	Time duration; // duration in hh:mm
 	Bus* assigned_bus; // pointer to the bus assigned to the trip
-#ifndef _ENROLLTEST
 	list<Client*> enrolled_clients; // list of pointers to enrolled clients  
-#endif // _ENROLLTEST
+
 
 	static int id_counter; // static variable used to assign new ids
 
 public:
-
-#ifdef _ENROLLTEST
-	list<Client*> enrolled_clients;	// list of pointers to enrolled clients  
-#endif // _ENROLLTEST
 
 	Trip(string f, string t, unsigned int di, int depmo, int depda, int depho, int depmi, int durho, int durmi); // constructor with all attributes
 	Trip(string f, string t, unsigned int di, Time dep, Time dur);
