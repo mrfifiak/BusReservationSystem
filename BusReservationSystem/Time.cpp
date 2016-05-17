@@ -152,12 +152,12 @@ ostream & operator<<(ostream &o, Time const &t)
 	string out;
 	if (t.months == 0 && t.days == 0)
 	{
-		sprintf_s(buffer, "%02d:%02d", t.hours, t.minutes);
+		snprintf(buffer, 6, "%02d:%02d", t.hours, t.minutes);
 		out = string(buffer, 6);
 	}
 	else
 	{
-		sprintf_s(buffer, "%02d.%02d %02d:%02d", t.days, t.months, t.hours, t.minutes);
+		snprintf(buffer, 12, "%02d.%02d %02d:%02d", t.days, t.months, t.hours, t.minutes);
 		out = string(buffer, 12);
 	}
 	o << out;

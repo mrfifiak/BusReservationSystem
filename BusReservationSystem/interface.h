@@ -2,6 +2,7 @@
 #define INTERFACE_H
 
 #include <iostream>
+#include <limits>	// for safe data input
 #include <string>
 
 #include "busreservationsystem.h"

@@ -7,7 +7,6 @@
 #include "trip.h"
 
 #include <iostream>
-#include <limits>	// for safe data input
 #include <list>
 
 using namespace std;
