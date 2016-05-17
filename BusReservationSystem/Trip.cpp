@@ -41,19 +41,19 @@ Trip::~Trip()
 }
 
 // generic getter
-Time Trip::getDep()
+Time Trip::getDep() const
 {
 	return departure;
 }
 
 // generic getter
-Time Trip::getDur()
+Time Trip::getDur() const
 {
 	return duration;
 }
 
 // returns true if the number of enrolled passengers >= bus capacity
-bool Trip::isfull()
+bool Trip::isfull() const
 {
 	if (enrolled_clients.size() >= assigned_bus->getCapacity())
 	{
@@ -66,7 +66,7 @@ bool Trip::isfull()
 }
 
 // returns true if the trip has a bus assigned
-bool Trip::hasbus()
+bool Trip::hasbus() const
 {
 	if (assigned_bus != NULL)
 	{
@@ -76,13 +76,13 @@ bool Trip::hasbus()
 }
 
 //generic getter
-int Trip::getID()
+int Trip::getID() const
 {
 	return id;
 }
 
 // returns assigned bus' ID, -1 if no bus assigned
-int Trip::getBusID()
+int Trip::getBusID() const
 {
 	if (assigned_bus == NULL)
 	{

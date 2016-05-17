@@ -35,7 +35,7 @@ Time::~Time()
 {
 }
 
-bool Time::operator==(const Time & time)
+bool Time::operator==(const Time & time) const
 {
 	if(months == time.months && days == time.days && hours == time.hours && minutes == time.minutes)
 	{
@@ -47,7 +47,7 @@ bool Time::operator==(const Time & time)
 	}
 }
 
-bool Time::operator!=(const Time & time)
+bool Time::operator!=(const Time & time) const
 {
 	if (months == time.months && days == time.days && hours == time.hours && minutes == time.minutes)
 	{
@@ -59,7 +59,7 @@ bool Time::operator!=(const Time & time)
 	}
 }
 
-bool Time::operator>(const Time & time)
+bool Time::operator>(const Time & time) const
 {
 	if (months > time.months)
 	{
@@ -97,7 +97,7 @@ Time & Time::operator=(const Time & time)
 	return *this;
 }
 
-Time Time::operator+(const Time & time)
+Time Time::operator+(const Time & time) const
 {
 	int mo = 0, da = 0, ho = 0, mi = 0, temp;
 

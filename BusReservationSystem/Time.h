@@ -22,11 +22,11 @@ public:
 	~Time();	// destructor
 
 	/* OPERATORS */
-	bool operator == (const Time &time);
-	bool operator != (const Time &time);
-	bool operator > (const Time &time);
+	bool operator == (const Time &time) const;
+	bool operator != (const Time &time) const;
+	bool operator > (const Time &time) const;
 	Time& operator = (const Time &time);
-	Time operator + (const Time &time);
+	Time operator + (const Time &time) const;
 	Time& operator += (const Time &time);
 
 	friend ostream& operator<< (ostream&, Time const&);	// operator <<

@@ -46,12 +46,12 @@ public:
 	Trip(string f, string t, unsigned int di, Time dep, Time dur);
 	~Trip();	// destructor
 
-	Time getDep();	// generic getter
-	Time getDur();	// generic getter
-	bool isfull();	// returns true if the number of enrolled passengers passengers >= bus capacity
-	bool hasbus();	// returns true if the trip has a bus assigned
-	int getID();	// generic getter
-	int getBusID();	// returns assigned bus' ID, -1 if no bus assigned
+	Time getDep() const;	// generic getter
+	Time getDur() const;	// generic getter
+	bool isfull() const;	// returns true if the number of enrolled passengers passengers >= bus capacity
+	bool hasbus() const;	// returns true if the trip has a bus assigned
+	int getID() const;	// generic getter
+	int getBusID() const;	// returns assigned bus' ID, -1 if no bus assigned
 	void assign_bus(Bus *newbus);	// assigns given bus
 	void enroll_client(Client *newclient);	// enrolls given client
 	void delete_client(Client *delclient);	// deletes client from the enrolled list
