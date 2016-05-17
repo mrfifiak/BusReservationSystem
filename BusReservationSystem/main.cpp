@@ -27,6 +27,7 @@ int main()
 	brs.new_bus(2);
 	brs.new_bus(2);
 	brs.check_trips();
+	brs.check_buses();
 	brs.assign_bus_to_trip(0, 0);
 	brs.enroll_client_to_trip(0, 0);
 	cout << brs.trips.front() << endl;

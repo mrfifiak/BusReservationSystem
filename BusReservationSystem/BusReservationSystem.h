@@ -32,7 +32,7 @@ public:
 	void new_bus(int cap); // creates a bus
 	void remove_bus(int id); // removes a bus
 	void free_bus(int id); // dismisses selected bus from the trip and vice versa
-	void check_busess(); // checks if all the buses have a trip assigned
+	void check_buses(); // checks if all the buses have a trip assigned
 
 	void new_trip(string from, string to, unsigned int di, Time dep, Time dur); // creates a new trip
 	void new_trip(string from, string to, unsigned int di, int depmo, int depda, int depho, int depmi, int durho, int durmi); // creates a new trip

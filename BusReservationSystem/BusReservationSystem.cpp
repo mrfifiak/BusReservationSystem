@@ -123,7 +123,7 @@ void BusReservationSystem::free_bus(int id)
 }
 
 // checks if all the buses have a trip assigned
-void BusReservationSystem::check_busess()
+void BusReservationSystem::check_buses()
 {
 	list<int> ids;
 	list<Bus>::iterator bi;
