@@ -61,42 +61,86 @@ bool Time::operator!=(const Time& time) const
 
 bool Time::operator>(const Time& time) const
 {
-	if (months > time.months)
+	if (months < time.months)
+	{
+		return false;
+	}
+	if(months > time.months)
 	{
 		return true;
 	}
-	if (days > time.days)
+	if (months == time.months)
 	{
-		return true;
-	}
-	if (hours > time.hours)
-	{
-		return true;
-	}
-	if (minutes > time.minutes)
-	{
-		return true;
+		if (days < time.days)
+		{
+			return false;
+		}
+		if (days > time.days)
+		{
+			return true;
+		}
+		if (days == time.days)
+		{
+			if (hours < time.hours)
+			{
+				return false;
+			}
+			if (hours > time.hours)
+			{
+				return true;
+			}
+			if (hours == time.hours)
+			{
+				if (minutes <= time.minutes)
+				{
+					return false;
+				}
+				return true;
+			}
+		}
 	}
 	return false;
 }
 
 bool Time::operator<(const Time& time) const
 {
+	if (months > time.months)
+	{
+		return false;
+	}
 	if (months < time.months)
 	{
 		return true;
 	}
-	if (days < time.days)
+	if (months == time.months)
 	{
-		return true;
-	}
-	if (hours < time.hours)
-	{
-		return true;
-	}
-	if (minutes < time.minutes)
-	{
-		return true;
+		if (days > time.days)
+		{
+			return false;
+		}
+		if (days < time.days)
+		{
+			return true;
+		}
+		if (days == time.days)
+		{
+			if (hours > time.hours)
+			{
+				return false;
+			}
+			if (hours < time.hours)
+			{
+				return true;
+			}
+			if (hours == time.hours)
+			{
+				if (minutes >= time.minutes)
+				{
+					return false;
+				}
+				return true;
+			}
+		}
 	}
 	return false;
 }
@@ -118,7 +162,7 @@ Time& Time::operator=(const Time& time)
 
 Time Time::operator+(const Time& time) const
 {
-	int mo = 0, da = 0, ho = 0, mi = 0, temp;
+	int mo = 0, da = 0, ho = 0, mi, temp;
 
 	mi = minutes + time.minutes;
 	if (mi >= 60)

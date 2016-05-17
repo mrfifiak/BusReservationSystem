@@ -1,16 +1,6 @@
 #include "busreservationsystem.h"
 
 
-// return true if t1 starts before t2
-bool BusReservationSystem::compareTrips(const Trip& t1, const Trip& t2)
-{
-	if (t1.getDep() < t2.getDep())
-	{
-		return true;
-	}
-	return false;
-}
-
 // default constructor
 BusReservationSystem::BusReservationSystem()
 {
@@ -457,7 +447,7 @@ void BusReservationSystem::print_trip_clients(int id)
 void BusReservationSystem::print_timetable()
 {
 	list<Trip>::iterator it;
-	//trips.sort();
+	trips.sort();
 
 	cout << "Departure\tFrom\tTo" << endl;
 	for (it = trips.begin(); it != trips.end(); ++it)
