@@ -290,7 +290,6 @@ void BusReservationSystem::enroll_client_to_trip(int cid, int tid)
 	list<Client>::iterator elclient = findID(clients, cid);
 	list<Trip>::iterator eltrip = findID(trips, tid);
 	return_state rs;
-	int temp;
 
 	/* dealing with cases when there's no such client/trip */
 	if (elclient == clients.end())
@@ -363,9 +362,9 @@ void BusReservationSystem::cancel_trip(int cid, int tid)
 		return;
 	}
 	/* checks if the client is enrolled to the trip */
-	else if ()
+	else if (!canclient->is_enrolled(cantrip->getID()))
 	{
-		rs = FAIL_NOT_BOOKED
+		rs = FAIL_NOT_BOOKED;
 	}
 	else
 	{
@@ -376,6 +375,8 @@ void BusReservationSystem::cancel_trip(int cid, int tid)
 		cantrip->delete_client(delclient);
 		rs = SUCCESS;
 	}
+
+	rstate("Trip", rs);
 
 }
 

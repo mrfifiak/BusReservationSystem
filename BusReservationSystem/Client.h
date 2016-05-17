@@ -31,6 +31,7 @@ public:
 
 	int getID();	// returns ID
 	void change_data(string newname);	// changes the name of the client
+	bool is_enrolled(int tid);	// checks if the client is enrolled to the trip with given ID
 	bool does_overlap(Time ntdep, Time ntdur);	// checks if the trip with ntdep and ntdur values overlaps with the trips the client already enrolled to
 	void book_trip(Trip* newtrip);	// books given trip
 	void cancel_trip(Trip* deltrip);	// cancels given trip

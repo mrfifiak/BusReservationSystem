@@ -55,6 +55,9 @@ int main()
 	b1.enroll_client_to_trip(0, 0);
 	cout << b1.trips.front() << endl;
 	b1.trips.front().print_clients();
+	b1.cancel_trip(0, 0);
+	cout << b1.trips.front() << endl;
+	b1.trips.front().print_clients();
 
 #endif
 

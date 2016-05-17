@@ -35,6 +35,21 @@ void Client::change_data(string newname)
 #endif
 }
 
+bool Client::is_enrolled(int tid)
+{
+	list<Trip*>::iterator it;
+
+	for (it = booked_trips.begin(); it != booked_trips.end(); ++it)
+	{
+		if ((*it)->getID() == tid)
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
+
 bool Client::does_overlap(Time ntdep, Time ntdur)
 {
 	if (booked_trips.empty())
