@@ -46,7 +46,6 @@ bool Client::is_enrolled(int tid)
 			return true;
 		}
 	}
-
 	return false;
 }
 
