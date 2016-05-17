@@ -25,19 +25,19 @@ Bus::~Bus()
 }
 
 // returns ID
-int Bus::getID()
+int Bus::getID() const
 {
 	return id;
 }
 
 // returns capacity
-int Bus::getCapacity()
+int Bus::getCapacity() const
 {
 	return capacity;
 }
 
 // returns ID of assigned trip
-int Bus::getTripID()
+int Bus::getTripID() const
 {
 	if (assigned_trip == NULL)
 	{

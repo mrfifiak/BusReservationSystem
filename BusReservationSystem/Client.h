@@ -26,10 +26,10 @@ private:
 	static int id_counter;	// static variable used to assign new ids
 
 public:
-	Client(string n);	// constructor with name
+	explicit Client(string n);	// constructor with name
 	~Client();	// destructor
 
-	int getID();	// returns ID
+	int getID() const;	// returns ID
 	void change_data(string newname);	// changes the name of the client
 	bool is_enrolled(int tid);	// checks if the client is enrolled to the trip with given ID
 	bool does_overlap(Time ntdep, Time ntdur);	// checks if the trip with ntdep and ntdur values overlaps with the trips the client already enrolled to

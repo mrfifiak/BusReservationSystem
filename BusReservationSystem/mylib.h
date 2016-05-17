@@ -48,7 +48,7 @@ inline void rstate(string s, return_state rs)
 template<typename T>
 typename list<T>::iterator findID(list<T>& source, int id)
 {
-	list<T>::iterator it;
+	typename list<T>::iterator it;
 	bool flag = 0;
 
 	for (it = source.begin(); flag || it != source.end(); it++)

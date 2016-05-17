@@ -24,12 +24,12 @@ private:
 	static int id_counter;	// static variable used to assign new ids
 
 public:
-	Bus(int cap);	// constructor which sets bus' capacity
+	explicit Bus(int cap);	// constructor which sets bus' capacity
 	~Bus();	//destructor
 
-	int getID();	// returns ID
-	int getCapacity();	// returns capacity
-	int getTripID();	// returns ID of assigned trip, -1 if no trip assigned 
+	int getID() const;	// returns ID
+	int getCapacity() const;	// returns capacity
+	int getTripID() const;	// returns ID of assigned trip, -1 if no trip assigned 
 	void assign_trip(Trip* newtrip);	// assigns trip with given id
 	void dismiss_trip();	// dismisses the assigned trip
 

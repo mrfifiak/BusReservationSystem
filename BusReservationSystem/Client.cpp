@@ -21,7 +21,7 @@ Client::~Client()
 }
 
 // returns ID
-int Client::getID()
+int Client::getID() const
 {
 	return id;
 }
