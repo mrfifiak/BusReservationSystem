@@ -2,6 +2,7 @@
 #define CLIENT_H
 
 #include "mylib.h"
+#include "time.h"
 #include "trip.h"
 
 #include <iostream>
@@ -31,7 +32,7 @@ public:
 	int getID();	// returns ID
 	void change_data(string newname);	// changes the name of the client
 	bool does_overlap(Time ntdep, Time ntdur);	// checks if the trip with ntdep and ntdur values overlaps with the trips the client already enrolled to
-	return_state book_trip(int id);	// books trip with given id
+	void book_trip(Trip* newtrip);	// books given trip
 	return_state cancel_trip(int id);	// cancels trip with given id
 
 	friend ostream & operator<<(ostream & o, Client const & c);	// operator <<

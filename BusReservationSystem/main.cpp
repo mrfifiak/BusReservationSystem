@@ -48,13 +48,14 @@ int main()
 #endif
 
 #ifdef _ENROLLTEST
-	Client * c1tr = new Client("Filip");
-	Client * c2tr = new Client("Asia");
-	Trip trip = Trip("w", "e", 34, 3, 3, 3, 3, 4, 4);
-	trip.enrolled_clients.push_back(c1tr);
-	trip.enrolled_clients.push_back(c2tr);
-	trip.print_clients();
-	trip.print_clients();
+	b1.new_client("Filip Stolarczuk");
+	new_trip(b1);
+	b1.new_bus(20);
+	b1.assign_bus_to_trip(0, 0);
+	b1.enroll_client_to_trip(0, 0);
+	cout << b1.trips.front() << endl;
+	b1.trips.front().print_clients();
+
 #endif
 
 

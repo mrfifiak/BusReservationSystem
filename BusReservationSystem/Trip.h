@@ -52,7 +52,8 @@ public:
 	bool hasbus();	// returns true if the trip has a bus assigned
 	int getID();	// generic getter
 	int getBusID();	// returns assigned bus' ID, -1 if no bus assigned
-	void assign_bus(Bus *newbus);	// assign bus with given id
+	void assign_bus(Bus *newbus);	// assigns given bus
+	void enroll_client(Client *newclient);	// enrolls given client
 	void dismiss_bus();	// dismiss the assigned bus
 	void change_departure_time(int mo, int da, int ho, int mi);	// changes all the attributes of the departure time
 	void change_departure_time(int ho, int mi);	// changes the time (hh:mm) of the departure

@@ -36,6 +36,7 @@ int Bus::getCapacity()
 	return capacity;
 }
 
+// returns ID of assigned trip
 int Bus::getTripID()
 {
 	if (assigned_trip == NULL)
@@ -48,7 +49,7 @@ int Bus::getTripID()
 	}
 }
 
-// assigns trip with given id
+// assigns given trip 
 void Bus::assign_trip(Trip* newtrip)
 {
 	assigned_trip = newtrip;

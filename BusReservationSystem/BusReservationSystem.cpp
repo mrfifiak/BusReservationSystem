@@ -185,6 +185,57 @@ void BusReservationSystem::free_trip(int id)
 	rstate("Trip", rs);
 }
 
+// changes trip's data
+void BusReservationSystem::change_trip_departure_time(int id, int mo, int da, int ho, int mi)
+{
+	list<Trip>::iterator trip = findID(trips, id);
+	return_state rs;
+	if (trip == trips.end())
+	{
+		rs = FAIL_NOT_FOUND;
+	}
+	else
+	{
+		trip->change_departure_time(mo, da, ho, mi);
+		rs = SUCCESS;
+	}
+	rstate("Trip", rs);
+}
+
+// changes trip's data
+void BusReservationSystem::change_trip_departure_time(int id, int ho, int mi)
+{
+	list<Trip>::iterator trip = findID(trips, id);
+	return_state rs;
+	if (trip == trips.end())
+	{
+		rs = FAIL_NOT_FOUND;
+	}
+	else
+	{
+		trip->change_departure_time(ho, mi);
+		rs = SUCCESS;
+	}
+	rstate("Trip", rs);
+}
+
+// changes trip's data
+void BusReservationSystem::change_trip_date(int id, int mo, int da)
+{
+	list<Trip>::iterator trip = findID(trips, id);
+	return_state rs;
+	if (trip == trips.end())
+	{
+		rs = FAIL_NOT_FOUND;
+	}
+	else
+	{
+		trip->change_departure_date(mo, da);
+		rs = SUCCESS;
+	}
+	rstate("Trip", rs);
+}
+
 // assigns bus to a trip and vice versa
 void BusReservationSystem::assign_bus_to_trip(int bid, int tid)
 {
@@ -259,69 +310,34 @@ void BusReservationSystem::enroll_client_to_trip(int cid, int tid)
 		return;
 	}
 
-	/* checks if the trip is full */
-	if (eltrip->isfull())
+	/* checks if the trip has bus assigned */
+	if (eltrip->getBusID() == -1)
 	{
-		rs = FAIL_FULL;
-		rstate("Trip", rs);
+		rs = FAIL_NO_BUS;
+	}
+	/* checks if the trip is full */
+	else if (eltrip->isfull())
+	{
+		rs = FAIL_FULL;	
 	}
 	/* checks if the trip overlaps with another one */
-	else if()
+	else if(elclient->does_overlap(eltrip->getDep(), eltrip->getDur()))
 	{
-
+		rs = FAIL_OVERLAP;
 	}
-}
 
-// changes trip's data
-void BusReservationSystem::change_trip_departure_time(int id, int mo, int da, int ho, int mi)
-{
-	list<Trip>::iterator trip = findID(trips, id);
-	return_state rs;
-	if (trip == trips.end())
-	{
-		rs = FAIL_NOT_FOUND;
-	}
 	else
 	{
-		trip->change_departure_time(mo, da, ho, mi);
+		Trip* newtrip = &(*eltrip);
+		Client* newclient = &(*elclient);
+
+		elclient->book_trip(newtrip);
+		eltrip->enroll_client(newclient);
 		rs = SUCCESS;
 	}
 	rstate("Trip", rs);
 }
 
-// changes trip's data
-void BusReservationSystem::change_trip_departure_time(int id, int ho, int mi)
-{
-	list<Trip>::iterator trip = findID(trips, id);
-	return_state rs;
-	if (trip == trips.end())
-	{
-		rs = FAIL_NOT_FOUND;
-	}
-	else
-	{
-		trip->change_departure_time(ho, mi);
-		rs = SUCCESS;
-	}
-	rstate("Trip", rs);
-}
-
-// changes trip's data
-void BusReservationSystem::change_trip_date(int id, int mo, int da)
-{
-	list<Trip>::iterator trip = findID(trips, id);
-	return_state rs;
-	if (trip == trips.end())
-	{
-		rs = FAIL_NOT_FOUND;
-	}
-	else
-	{
-		trip->change_departure_date(mo, da);
-		rs = SUCCESS;
-	}
-	rstate("Trip", rs);
-}
 
 // prints all trips with bus ID and number of clients
 void BusReservationSystem::print_trips()

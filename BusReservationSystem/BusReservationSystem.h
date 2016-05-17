@@ -35,14 +35,13 @@ public:
 	void remove_trip(int id);	// removes a trip
 	void check_trips();	// checks if all the trips have their buses
 	void free_trip(int id);	// dismiss selected trip from the bus and vice versa
-	
-	void assign_bus_to_trip(int bid, int tid);	// assigns bus to a trip and vice versa
-	void enroll_client_to_trip(int cid, int tid);	// enrolls client to a trip and vice versa
-
-
 	void change_trip_departure_time(int id, int mo, int da, int ho, int mi);	// changes trip's data
 	void change_trip_departure_time(int id, int ho, int mi);	// changes trip's data
 	void change_trip_date(int id, int mo, int da);	// changes trip's data
+
+	void assign_bus_to_trip(int bid, int tid);	// assigns bus to a trip and vice versa
+	void enroll_client_to_trip(int cid, int tid);	// enrolls client to a trip and vice versa
+
 	void print_trips();	// prints all trips' data with bus ID and number of clients
 	void print_trip_clients(int id);	// prints trip's basic data with list of clients
 	void print_timetable();	// prints all trips' basic data

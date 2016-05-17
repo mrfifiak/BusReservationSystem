@@ -56,7 +56,7 @@ bool Client::does_overlap(Time ntdep, Time ntdur)
 		for (it = booked_trips.begin(); it != booked_trips.end(); ++it)
 		{
 			Time depar = (*it)->getDep();
-			Time temp = (*it)->getDep() + (*it)->getDur;
+			Time temp = (*it)->getDep() + (*it)->getDur();
 			if (ntdep > depar && temp > ntdep)
 			{
 				return true;
@@ -66,10 +66,10 @@ bool Client::does_overlap(Time ntdep, Time ntdur)
 	}
 }
 
-// books trip with given id
-return_state Client::book_trip(int id)
+// books given trip
+void Client::book_trip(Trip * newtrip)
 {
-	return return_state();
+	booked_trips.push_back(newtrip);
 }
 
 // cancels trip with given id

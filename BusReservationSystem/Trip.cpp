@@ -94,10 +94,16 @@ int Trip::getBusID()
 	}
 }
 
-// assign bus with given id
+// assign given bus
 void Trip::assign_bus(Bus *newbus)
 {
 	assigned_bus = newbus;
+}
+
+// enrolls given client
+void Trip::enroll_client(Client * newclient)
+{
+	enrolled_clients.push_back(newclient);
 }
 
 // dismiss the assigned bus
