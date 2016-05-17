@@ -34,6 +34,7 @@ public:
 	void free_bus(int id); // dismisses selected bus from the trip and vice versa
 
 	void new_trip(string from, string to, unsigned int di, Time dep, Time dur); // creates a new trip
+	void new_trip(string from, string to, unsigned int di, int depmo, int depda, int depho, int depmi, int durho, int durmi); // creates a new trip
 	void remove_trip(int id); // removes a trip
 	void check_trips(); // checks if all the trips have their buses
 	void free_trip(int id); // dismisses selected trip from the bus and vice versa

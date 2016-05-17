@@ -129,6 +129,13 @@ void BusReservationSystem::new_trip(string from, string to, unsigned int di, Tim
 	trips.push_back(*newtrip);
 }
 
+// creates a new trip
+void BusReservationSystem::new_trip(string from, string to, unsigned di, int depmo, int depda, int depho, int depmi, int durho, int durmi)
+{
+	Trip* newtrip = new Trip(from, to, di, Time(depmo, depda, depho, depmi), Time(durho, durmi));
+	trips.push_back(*newtrip);
+}
+
 // removes a trip
 void BusReservationSystem::remove_trip(int id)
 {

@@ -58,7 +58,7 @@ typename list<T>::iterator findID(list<T>& source, int id)
 	typename list<T>::iterator it;
 	bool flag = 0;
 
-	for (it = source.begin(); flag || it != source.end(); it++)
+	for (it = source.begin(); flag || it != source.end(); ++it)
 	{
 		if ((*it).getID() == id)
 		{
