@@ -384,11 +384,29 @@ void BusReservationSystem::cancel_trip(int cid, int tid)
 // prints all trips with bus ID and number of clients
 void BusReservationSystem::print_trips()
 {
+	list<Trip>::iterator it;
+	cout << "Trip ID\tFrom\tTo\tDistance\tDeparture\tDuration\tBus ID\tClients enrolled" << endl;
+	for(it = trips.begin(); it != trips.end(); ++it)
+	{
+		cout << *it << endl;
+	}
 }
 
 // prints trip's basic data with list of clients
 void BusReservationSystem::print_trip_clients(int id)
 {
+	list<Trip>::iterator it;
+	it = findID(trips, id);
+	if(it == trips.end())
+	{
+		rstate("Trip", FAIL_NOT_FOUND);
+	}
+	else
+	{
+		cout << "Trip ID\tFrom\tTo\tDistance\tDeparture\tDuration\tBus ID\tClients enrolled" << endl;
+		cout << *it << endl;
+		(*it).print_clients();
+	}
 }
 
 // prints all trips' basic data
