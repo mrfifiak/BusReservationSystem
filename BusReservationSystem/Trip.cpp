@@ -106,6 +106,12 @@ void Trip::enroll_client(Client * newclient)
 	enrolled_clients.push_back(newclient);
 }
 
+// deletes client from the enrolled list
+void Trip::delete_client(Client * delclient)
+{
+	enrolled_clients.remove(delclient);
+}
+
 // dismiss the assigned bus
 void Trip::dismiss_bus()
 {

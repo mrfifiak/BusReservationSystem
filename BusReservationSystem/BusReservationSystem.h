@@ -29,18 +29,19 @@ public:
 
 	void new_bus(int cap);	// creates a bus
 	void remove_bus(int id);	// removes a bus
-	void free_bus(int id);	// dismiss selected bus from the trip and vice versa
+	void free_bus(int id);	// dismisses selected bus from the trip and vice versa
 
 	void new_trip(string from, string to, unsigned int di, Time dep, Time dur);	// creates a new trip
 	void remove_trip(int id);	// removes a trip
 	void check_trips();	// checks if all the trips have their buses
-	void free_trip(int id);	// dismiss selected trip from the bus and vice versa
+	void free_trip(int id);	// dismisses selected trip from the bus and vice versa
 	void change_trip_departure_time(int id, int mo, int da, int ho, int mi);	// changes trip's data
 	void change_trip_departure_time(int id, int ho, int mi);	// changes trip's data
 	void change_trip_date(int id, int mo, int da);	// changes trip's data
 
 	void assign_bus_to_trip(int bid, int tid);	// assigns bus to a trip and vice versa
 	void enroll_client_to_trip(int cid, int tid);	// enrolls client to a trip and vice versa
+	void cancel_trip(int cid, int tid);	// cancels given trip for given client
 
 	void print_trips();	// prints all trips' data with bus ID and number of clients
 	void print_trip_clients(int id);	// prints trip's basic data with list of clients

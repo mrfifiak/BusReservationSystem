@@ -72,10 +72,10 @@ void Client::book_trip(Trip * newtrip)
 	booked_trips.push_back(newtrip);
 }
 
-// cancels trip with given id
-return_state Client::cancel_trip(int id)
+// cancels given trip
+void Client::cancel_trip(Trip* deltrip)
 {
-	return return_state();
+	booked_trips.remove(deltrip);
 }
 
 ostream & operator<<(ostream & o, Client const & c)

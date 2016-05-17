@@ -33,7 +33,7 @@ public:
 	void change_data(string newname);	// changes the name of the client
 	bool does_overlap(Time ntdep, Time ntdur);	// checks if the trip with ntdep and ntdur values overlaps with the trips the client already enrolled to
 	void book_trip(Trip* newtrip);	// books given trip
-	return_state cancel_trip(int id);	// cancels trip with given id
+	void cancel_trip(Trip* deltrip);	// cancels given trip
 
 	friend ostream & operator<<(ostream & o, Client const & c);	// operator <<
 

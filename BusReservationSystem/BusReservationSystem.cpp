@@ -91,7 +91,7 @@ void BusReservationSystem::remove_bus(int id)
 	rstate("Bus", rs);
 }
 
-// dismiss selected bus from the trip and vice versa
+// dismisses selected bus from the trip and vice versa
 void BusReservationSystem::free_bus(int id)
 {
 	list<Bus>::iterator fbus = findID(buses, id);
@@ -102,8 +102,8 @@ void BusReservationSystem::free_bus(int id)
 	}
 	else
 	{
+		list<Trip>::iterator ftrip = findID(trips, fbus->getTripID());
 		fbus->dismiss_trip();
-		list<Trip>::iterator ftrip;
 		ftrip->dismiss_bus();
 		rs = SUCCESS;
 	}
@@ -165,7 +165,7 @@ void BusReservationSystem::check_trips()
 	}
 }
 
-// dismiss selected trip from the bus and vice versa
+// dismisses selected trip from the bus and vice versa
 void BusReservationSystem::free_trip(int id)
 {
 	list<Trip>::iterator ftrip = findID(trips, id);
@@ -176,8 +176,8 @@ void BusReservationSystem::free_trip(int id)
 	}
 	else
 	{
+		list<Bus>::iterator fbus = findID(buses, ftrip->getBusID());
 		ftrip->dismiss_bus();
-		list<Bus>::iterator fbus;
 		fbus->dismiss_trip();
 		rs = SUCCESS;
 	}
@@ -336,6 +336,47 @@ void BusReservationSystem::enroll_client_to_trip(int cid, int tid)
 		rs = SUCCESS;
 	}
 	rstate("Trip", rs);
+}
+
+// cancels given trip for given client
+void BusReservationSystem::cancel_trip(int cid, int tid)
+{
+	list<Client>::iterator canclient = findID(clients, cid);
+	list<Trip>::iterator cantrip = findID(trips, tid);
+	return_state rs;
+
+	/* checks if such client and trip exist */
+	if (canclient == clients.end())
+	{
+		rs = FAIL_NOT_FOUND;
+		rstate("Client", rs);
+		if (cantrip == trips.end())
+		{
+			rstate("Trip", rs);
+		}
+		return;
+	}
+	else if (cantrip == trips.end())
+	{
+		rs = FAIL_NOT_FOUND;
+		rstate("Trip", rs);
+		return;
+	}
+	/* checks if the client is enrolled to the trip */
+	else if ()
+	{
+		rs = FAIL_NOT_BOOKED
+	}
+	else
+	{
+		Trip* deltrip = &(*cantrip);
+		Client* delclient = &(*canclient);
+
+		canclient->cancel_trip(deltrip);
+		cantrip->delete_client(delclient);
+		rs = SUCCESS;
+	}
+
 }
 
 
