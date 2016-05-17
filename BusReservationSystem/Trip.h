@@ -56,6 +56,7 @@ public:
 	void print_clients(); // prints enrolled clients
 
 	bool operator <(const Trip& trip) const;
+	bool operator >(const Trip& trip) const;
 
 	friend ostream& operator<<(ostream& o, Trip const& t); // operator <<
 };

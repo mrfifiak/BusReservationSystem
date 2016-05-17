@@ -429,7 +429,7 @@ void BusReservationSystem::cancel_trip(int cid, int tid)
 void BusReservationSystem::print_trips()
 {
 	list<Trip>::iterator it;
-	cout << "Trip ID\tFrom\tTo\tDistance\tDeparture\tDuration\tBus ID\tClients enrolled" << endl;
+	cout << "Trip ID\tFrom\tTo\tDist.\tDeparture\tDur.\tBus ID\tPassengers" << endl;
 	for (it = trips.begin(); it != trips.end(); ++it)
 	{
 		cout << *it << endl;
@@ -447,7 +447,7 @@ void BusReservationSystem::print_trip_clients(int id)
 	}
 	else
 	{
-		cout << "Trip ID\tFrom\tTo\tDistance\tDeparture\tDuration\tBus ID\tClients enrolled" << endl;
+		cout << "Trip ID\tFrom\tTo\tDist.\tDeparture\tDur.\tBus ID\tPassengers" << endl;
 		cout << *it << endl;
 		(*it).print_clients();
 	}
@@ -457,11 +457,11 @@ void BusReservationSystem::print_trip_clients(int id)
 void BusReservationSystem::print_timetable()
 {
 	list<Trip>::iterator it;
-	trips.sort();
+	//trips.sort();
 
 	cout << "Departure\tFrom\tTo" << endl;
 	for (it = trips.begin(); it != trips.end(); ++it)
 	{
-		cout << (*it).getDep() << (*it).getFrom() << (*it).GetTo() << endl;
+		cout << (*it).getDep() << (*it).getFrom() << " " << (*it).GetTo() << endl;
 	}
 }

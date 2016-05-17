@@ -181,6 +181,15 @@ bool Trip::operator<(const Trip& trip) const
 	return false;
 }
 
+bool Trip::operator>(const Trip& trip) const
+{
+	if (departure > trip.departure)
+	{
+		return true;
+	}
+	return false;
+}
+
 // operator <<
 ostream& operator<<(ostream& o, Trip const& t)
 {

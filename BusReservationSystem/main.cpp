@@ -47,6 +47,7 @@ int main()
 	brs.enroll_client_to_trip(0, 3);
 	brs.enroll_client_to_trip(1, 0);
 	brs.enroll_client_to_trip(2, 0);
+	cout << endl << "penis"<<endl;
 	brs.enroll_client_to_trip(0, 1);
 	brs.enroll_client_to_trip(1, 1);
 	brs.enroll_client_to_trip(2, 1);

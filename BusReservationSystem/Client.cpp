@@ -55,29 +55,27 @@ bool Client::does_overlap(Time ntdep, Time ntdur)
 	{
 		return false;
 	}
-	else
+
+	list<Trip*>::iterator it;
+	for (it = booked_trips.begin(); it != booked_trips.end(); ++it)
 	{
-		list<Trip*>::iterator it;
-		for (it = booked_trips.begin(); it != booked_trips.end(); ++it)
+		Time depar = (*it)->getDep();
+		Time temp = ntdep + ntdur;
+		if (ntdep < depar && temp > depar)
 		{
-			Time depar = (*it)->getDep();
-			Time temp = ntdep + ntdur;
-			if (depar > ntdep && temp > depar)
-			{
-				return true;
-			}
+			return true;
 		}
-		for (it = booked_trips.begin(); it != booked_trips.end(); ++it)
-		{
-			Time depar = (*it)->getDep();
-			Time temp = (*it)->getDep() + (*it)->getDur();
-			if (ntdep > depar && temp > ntdep)
-			{
-				return true;
-			}
-		}
-		return false;
 	}
+	for (it = booked_trips.begin(); it != booked_trips.end(); ++it)
+	{
+		Time depar = (*it)->getDep();
+		Time temp = (*it)->getDep() + (*it)->getDur();
+		if (depar < ntdep && temp > ntdep)
+		{
+			return true;
+		}
+	}
+	return false;
 }
 
 // books given trip
