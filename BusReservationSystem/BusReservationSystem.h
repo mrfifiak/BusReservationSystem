@@ -24,7 +24,7 @@ public:
 
 	void new_client(string name); // adds a new client
 	void remove_client(int id); // removes a client
-	void change_client_data(int id); // changes client's data
+	void change_client_data(int id, string name); // changes client's data
 
 	void new_bus(int cap); // creates a bus
 	void remove_bus(int id); // removes a bus

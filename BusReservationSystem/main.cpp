@@ -12,10 +12,16 @@ int main()
 {
 	BusReservationSystem brs;
 
+	brs.print_timetable();
+	brs.print_trips();
+	brs.print_trip_clients(0);
+	cout << endl << "TEST0" << endl;
 	brs.new_client("Filip Stolarczuk");
 	brs.new_client("Joanna Kamelska");
 	brs.new_client("Mateusz Roszkowski");
-	brs.new_client("Michal Bator");
+	brs.new_client("Michal Baktor");
+	brs.change_client_data(3, "Michal Bator");
+	brs.change_client_data(15, "Karol Karolak");
 	brs.new_trip("Warsaw", "Cracow", 300, 5, 20, 16, 30, 4, 20);
 	brs.new_trip("Warsaw", "Cracow", 300, 5, 21, 14, 30, 4, 20);
 	brs.new_trip("Warsaw", "Cracow", 300, 5, 22, 12, 30, 4, 20);

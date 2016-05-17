@@ -39,23 +39,14 @@ void BusReservationSystem::remove_client(int id)
 }
 
 // changes client's data
-void BusReservationSystem::change_client_data(int id)
+void BusReservationSystem::change_client_data(int id, string name)
 {
-	string name, n;
 	list<Client>::iterator chaclient;
 	return_state rs;
 
 	chaclient = findID(clients, id);
 	if (chaclient != clients.end())
 	{
-		cout << "Client's new name: ";
-		cin >> n;
-		name = n;
-		while (cin.peek() == ' ')
-		{
-			cin >> n;
-			name = name + ' ' + n;
-		}
 		(*chaclient).change_data(name);
 		rs = SUCCESS;
 	}
@@ -418,6 +409,12 @@ void BusReservationSystem::cancel_trip(int cid, int tid)
 // prints all trips with bus ID and number of clients
 void BusReservationSystem::print_trips()
 {
+	if (trips.empty())
+	{
+		cout << "There are no trips to be printed." << endl;
+		return;
+	}
+
 	list<Trip>::iterator it;
 	cout << "Trip ID\tFrom\tTo\tDist.\tDeparture\tDur.\tBus ID\tPassengers" << endl;
 	for (it = trips.begin(); it != trips.end(); ++it)
@@ -446,6 +443,12 @@ void BusReservationSystem::print_trip_clients(int id)
 // prints all trips' basic data
 void BusReservationSystem::print_timetable()
 {
+	if (trips.empty())
+	{
+		cout << "There are no trips to be printed." << endl;
+		return;
+	}
+
 	list<Trip>::iterator it;
 	trips.sort();
 

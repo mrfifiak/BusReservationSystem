@@ -40,6 +40,7 @@ void remove_client(BusReservationSystem& brs)
 void change_client_data(BusReservationSystem& brs)
 {
 	int id;
+	string name, n;
 
 	cout << endl << "What's the ID of the client whose data you want to change? ";
 	cin >> id;
@@ -51,8 +52,16 @@ void change_client_data(BusReservationSystem& brs)
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		cin >> id;
 	}
+	cout << "Client's new name: ";
+	cin >> n;
+	name = n;
+	while (cin.peek() == ' ')
+	{
+		cin >> n;
+		name = name + ' ' + n;
+	}
 
-	brs.change_client_data(id);
+	brs.change_client_data(id, name);
 }
 
 void new_bus(BusReservationSystem& brs)
