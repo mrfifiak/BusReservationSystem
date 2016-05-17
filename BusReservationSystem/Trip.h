@@ -51,6 +51,8 @@ public:
 	bool isfull() const;	// returns true if the number of enrolled passengers passengers >= bus capacity
 	bool hasbus() const;	// returns true if the trip has a bus assigned
 	int getID() const;	// generic getter
+	string getFrom() const;	// generic getter
+	string GetTo() const;	// generic getter
 	int getBusID() const;	// returns assigned bus' ID, -1 if no bus assigned
 	void assign_bus(Bus *newbus);	// assigns given bus
 	void enroll_client(Client *newclient);	// enrolls given client

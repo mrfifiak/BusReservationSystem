@@ -81,6 +81,18 @@ int Trip::getID() const
 	return id;
 }
 
+// generic getter
+string Trip::getFrom() const
+{
+	return from;
+}
+
+// generic getter
+string Trip::GetTo() const
+{
+	return to;
+}
+
 // returns assigned bus' ID, -1 if no bus assigned
 int Trip::getBusID() const
 {

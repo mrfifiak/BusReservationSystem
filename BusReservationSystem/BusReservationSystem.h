@@ -13,6 +13,9 @@ using namespace std;
 
 class BusReservationSystem
 {
+private:
+	static bool compareTrips(const Trip& t1, const Trip& t2);	// return true if t1 starts before t2
+
 public:
 	list<Bus> buses;	// list of all buses
 	list<Trip> trips;	// list of all trips
