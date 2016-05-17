@@ -1,7 +1,7 @@
 #ifndef TIME_H
 #define TIME_H
 
-#include <iomanip>
+#include <stdio.h>
 #include <string>
 #include <iostream>
 
