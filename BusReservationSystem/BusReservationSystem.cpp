@@ -462,9 +462,9 @@ void BusReservationSystem::print_timetable()
 	list<Trip>::iterator it;
 	trips.sort();
 
-	cout << "Departure\tFrom\tTo" << endl;
+	cout << "Departure\tFrom\tTo\tTrip ID" << endl;
 	for (it = trips.begin(); it != trips.end(); ++it)
 	{
-		cout << (*it).getDep() << (*it).getFrom() << " " << (*it).GetTo() << endl;
+		cout << (*it).getDep() << "\t" << (*it).getFrom() << "\t" << (*it).GetTo() << "\t" << (*it).getID() << endl;
 	}
 }
