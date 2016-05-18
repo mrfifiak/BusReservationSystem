@@ -1,5 +1,3 @@
-
-
 #include "busreservationsystem.h"
 #include "bus.h"
 #include "client.h"
@@ -53,7 +51,7 @@ int main()
 	brs.enroll_client_to_trip(0, 3);
 	brs.enroll_client_to_trip(1, 0);
 	brs.enroll_client_to_trip(2, 0);
-	cout << endl << "penis"<<endl;
+	cout << endl << "penis" << endl;
 	brs.enroll_client_to_trip(0, 1);
 	brs.enroll_client_to_trip(1, 1);
 	brs.enroll_client_to_trip(2, 1);
@@ -77,8 +75,6 @@ int main()
 	brs.enroll_client_to_trip(2, 0);
 	brs.remove_bus(0);
 	brs.print_trip_clients(0);
-
-
 
 
 	return 0;

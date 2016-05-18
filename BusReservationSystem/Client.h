@@ -36,7 +36,6 @@ public:
 	void cancel_all_trips(); // cancels all trips
 
 	friend ostream& operator<<(ostream& o, Client const& c); // operator <<
-	
 };
 
 

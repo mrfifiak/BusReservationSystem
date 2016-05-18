@@ -66,7 +66,7 @@ bool Time::operator>(const Time& time) const
 	{
 		return false;
 	}
-	if(months > time.months)
+	if (months > time.months)
 	{
 		return true;
 	}

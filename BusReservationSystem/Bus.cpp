@@ -1,8 +1,7 @@
 #include "bus.h"
 
 
-
-int Bus::id_counter = 0;	// initializing id counter
+int Bus::id_counter = 0; // initializing id counter
 
 
 // constructor which sets bus' capacity
@@ -12,7 +11,7 @@ Bus::Bus(int cap)
 	id = id_counter++;
 	assigned_trip = NULL;
 #ifdef _DEBUG
-		cout << "Created Bus with capacity " << capacity << " (ID: " << id << ")" << endl;
+	cout << "Created Bus with capacity " << capacity << " (ID: " << id << ")" << endl;
 #endif
 }
 
@@ -62,7 +61,7 @@ void Bus::dismiss_trip()
 }
 
 // operator <<
-ostream & operator<<(ostream & o, Bus const & b)
+ostream& operator<<(ostream& o, Bus const& b)
 {
 	o << "Bus ID: " << b.id << " capacity: " << b.capacity;
 	return o;

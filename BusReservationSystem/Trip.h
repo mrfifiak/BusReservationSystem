@@ -60,7 +60,6 @@ public:
 	bool operator >(const Trip& trip) const;
 
 	friend ostream& operator<<(ostream& o, Trip const& t); // operator <<
-
 };
 
 
