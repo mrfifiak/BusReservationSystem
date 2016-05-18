@@ -90,6 +90,21 @@ void Client::cancel_trip(Trip* deltrip)
 	booked_trips.remove(deltrip);
 }
 
+void Client::cancel_all_trips()
+{
+	if (booked_trips.empty())
+	{
+		return;
+	}
+	list<Trip*>::iterator ti;
+
+	for (ti = booked_trips.begin(); ti != booked_trips.end();)
+	{
+		(*ti)->delete_client(this);
+		ti = booked_trips.erase(ti);
+	}
+}
+
 ostream& operator<<(ostream& o, Client const& c)
 {
 	o << c.id << "\t" << c.name;

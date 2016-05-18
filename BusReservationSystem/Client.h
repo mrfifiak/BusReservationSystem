@@ -33,8 +33,10 @@ public:
 	bool does_overlap(Time ntdep, Time ntdur); // checks if the trip with ntdep and ntdur values overlaps with the trips the client already enrolled to
 	void book_trip(Trip* newtrip); // books given trip
 	void cancel_trip(Trip* deltrip); // cancels given trip
+	void cancel_all_trips(); // cancels all trips
 
 	friend ostream& operator<<(ostream& o, Client const& c); // operator <<
+	
 };
 
 

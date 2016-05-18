@@ -66,6 +66,14 @@ int main()
 	brs.print_trip_clients(0);
 	brs.print_trip_clients(2);
 	brs.print_trip_clients(1);
+	cout << endl << "TEST4" << endl;
+	brs.cancel_trip(2, 1);
+	brs.remove_client(1);
+	brs.print_trip_clients(0);
+	brs.print_trip_clients(1);
+	brs.remove_trip(1);
+	brs.print_trip_clients(1);
+
 
 
 

@@ -49,6 +49,7 @@ public:
 	void assign_bus(Bus* newbus); // assigns given bus
 	void enroll_client(Client* newclient); // enrolls given client
 	void delete_client(Client* delclient); // deletes client from the enrolled list
+	void delete_all_clients(); // deletes all clients
 	void dismiss_bus(); // dismiss the assigned bus
 	void change_departure_time(int mo, int da, int ho, int mi); // changes all the attributes of the departure time
 	void change_departure_time(int ho, int mi); // changes the time (hh:mm) of the departure
@@ -59,6 +60,7 @@ public:
 	bool operator >(const Trip& trip) const;
 
 	friend ostream& operator<<(ostream& o, Trip const& t); // operator <<
+
 };
 
 

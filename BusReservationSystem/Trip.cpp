@@ -124,6 +124,21 @@ void Trip::delete_client(Client* delclient)
 	enrolled_clients.remove(delclient);
 }
 
+void Trip::delete_all_clients()
+{
+	if (enrolled_clients.empty())
+	{
+		return;
+	}
+	list<Client*>::iterator ci;
+
+	for (ci = enrolled_clients.begin(); ci != enrolled_clients.end();)
+	{
+		(*ci)->cancel_trip(this);
+		ci = enrolled_clients.erase(ci);
+	}
+}
+
 // dismiss the assigned bus
 void Trip::dismiss_bus()
 {

@@ -30,8 +30,9 @@ void BusReservationSystem::remove_client(int id)
 	remclient = findID(clients, id);
 	if (remclient != clients.end())
 	{
-		rs = SUCCESS;
+		remclient->cancel_all_trips();
 		clients.erase(remclient);
+		rs = SUCCESS;
 	}
 	else rs = FAIL_NOT_FOUND;
 
@@ -153,8 +154,9 @@ void BusReservationSystem::remove_trip(int id)
 	remtrip = findID(trips, id);
 	if (remtrip != trips.end())
 	{
-		rs = SUCCESS;
+		remtrip->delete_all_clients();
 		trips.erase(remtrip);
+		rs = SUCCESS;
 	}
 	else rs = FAIL_NOT_FOUND;
 
