@@ -73,8 +73,16 @@ void BusReservationSystem::remove_bus(int id)
 	rembus = findID(buses, id);
 	if (rembus != buses.end())
 	{
-		rs = SUCCESS;
+		int tid = rembus->getTripID();
+		if (tid != -1)
+		{
+			list<Trip>::iterator ti;
+			ti = findID(trips, tid);
+			ti->delete_all_clients();
+			ti->dismiss_bus();
+		}
 		buses.erase(rembus);
+		rs = SUCCESS;
 	}
 	else rs = FAIL_NOT_FOUND;
 
