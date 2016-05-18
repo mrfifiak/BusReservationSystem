@@ -16,7 +16,7 @@ public:
 	int hours;
 	int minutes;
 
-	Time(); /*	TO DELETE	*/
+	Time(); // default constructor, all set to 0
 	Time(int ho, int mi); // constructor with months=0, days=0, hours=ho, minutes=mi
 	Time(int mo, int da, int ho, int mi); // constructor with months=mo, days=da, hours=ho, minutes=mi
 	~Time(); // destructor

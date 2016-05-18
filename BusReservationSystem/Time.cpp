@@ -1,9 +1,10 @@
 #include "time.h"
 
 
-/*	TO DELETE	*/
+// default constructor, all set to 0
 Time::Time()
 {
+	months = days = hours = minutes = 0;
 }
 
 // constructor with months=0, days=0, hours=ho, minutes=mi
