@@ -25,7 +25,7 @@ int main()
 	brs.new_trip("Warsaw", "Cracow", 300, 5, 22, 12, 30, 4, 20);
 	brs.new_trip("Poznan", "Wroclaw", 170, 5, 20, 15, 00, 3, 10);
 	brs.new_trip("Poznan", "Wroclaw", 170, 5, 21, 18, 30, 3, 10);
-	brs.new_trip("Poznan", "Wroclaw", 170, 5, 21, 20, 15, 3, 10);
+	brs.new_trip("Poznan", "Wroclaw", 170, 5, 21, 8, 00, 3, 10);
 	brs.new_bus(2);
 	brs.new_bus(2);
 	brs.new_bus(2);
@@ -75,6 +75,14 @@ int main()
 	brs.enroll_client_to_trip(2, 0);
 	brs.remove_bus(0);
 	brs.print_trip_clients(0);
+	brs.assign_bus_to_trip(2, 0);
+	brs.print_trips();
+	brs.free_bus(3);
+	brs.free_trip(0);
+	brs.change_trip_date(0, 5, 23);
+	brs.change_trip_departure_time(2, 5, 23, 17, 30);
+	brs.change_trip_departure_time(5, 9, 30);
+	brs.print_trips();
 
 
 	return 0;

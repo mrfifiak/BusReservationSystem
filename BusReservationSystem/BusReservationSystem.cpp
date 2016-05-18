@@ -78,7 +78,6 @@ void BusReservationSystem::remove_bus(int id)
 		{
 			list<Trip>::iterator ti;
 			ti = findID(trips, tid);
-			ti->delete_all_clients();
 			ti->dismiss_bus();
 		}
 		buses.erase(rembus);
@@ -414,7 +413,6 @@ void BusReservationSystem::cancel_trip(int cid, int tid)
 
 	rstate("Trip", rs);
 }
-
 
 // prints all trips with bus ID and number of clients
 void BusReservationSystem::print_trips()

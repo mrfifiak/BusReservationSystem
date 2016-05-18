@@ -142,6 +142,7 @@ void Trip::delete_all_clients()
 // dismiss the assigned bus
 void Trip::dismiss_bus()
 {
+	delete_all_clients();
 	assigned_bus = NULL;
 }
 
